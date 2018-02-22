@@ -1,0 +1,89 @@
+def createProductTable(cursor):
+    cursor.execute('''
+    CREATE TABLE IF NOT EXISTS Products(
+       EAN INTEGER PRIMARY KEY NOT NULL,
+       ProdName TEXT NOT NULL,
+       LabID INTEGER NOT NULL, FOREIGN KEY (LabID) REFERENCES Laboratories(LabID),
+       PrinAtivo TEXT NOT NULL,
+       CodGGREM INTEGER NOT NULL,
+       Registro INTEGER NOT NULL,
+       Description TEXT NOT NULL,
+       TeraClassID TEXT NOT NULL, FOREIGN KEY (TeraClassID) REFERENCES TerapeuticClass(TeraClassID),
+       ProdType TEXT NOT NULL,
+       PF0p REAL NOT NULL,
+       PF12p REAL NOT NULL,
+       PF17p REAL NOT NULL,
+       PF17p_ALC REAL NOT NULL,
+       PF17p5 REAL NOT NULL,
+       PF17p5_ALC REAL NOT NULL,
+       PF18p REAL NOT NULL,
+       PF18p_ALC REAL NOT NULL,
+       PF20p REAL NOT NULL,
+       PMC0p REAL,
+       PMC12p REAL,
+       PMC17p REAL,
+       PMC17p_ALC REAL,
+       PMC17p5 REAL,
+       PMC17p5_ALC REAL,
+       PMC18p REAL,
+       PMC18p_ALC REAL,
+       PMC20p REAL,
+       RestHosp INTEGER NOT NULL,
+       CAP INTEGER NOT NULL,
+       CONFAZ87 INTEGER NOT NULL,
+       AnalRecur INTEGER,
+       ListaTribID INTEGER NOT NULL, FOREIGN KEY (ListaTribID) REFERENCES ListaTributaria(ListaTribID),
+       Comerc2016 INTEGER NOT NULL,
+       Tarja INTEGER NOT NULL
+    )''')
+
+def createLaboratoryTable(cursor):
+    cursor.execute('''
+    CREATE TABLE IF NOT EXISTS Laboratories(
+       LabID INTEGER PRIMARY KEY NOT NULL,
+       LabName TEXT NOT NULL,
+       LabCNPJ TEXT NOT NULL,
+       LabOfficeAddress TEXT,
+       LabContactEmail1 TEXT,
+       LabContactEmail2 TEXT,
+       LabContactPhone1 TEXT,
+       LabContactPhone2 TEXT,
+       LabContactFax TEXT,
+    )''')
+
+def createProviderTable(cursor):
+    cursor.execute('''
+    CREATE TABLE IF NOT EXISTS ProviderCompany(
+       ProvCompID INTEGER PRIMARY KEY NOT NULL,
+       ProvCompName TEXT NOT NULL,
+       ProvCompCNPJ TEXT NOT NULL,
+       ProvOfficeAddress TEXT,
+       ProvContactEmail1 TEXT,
+       ProvContactEmail2 TEXT,
+       ProvContactPhone1 TEXT,
+       ProvContactPhone2 TEXT,
+       ProvContactFax TEXT,
+    )''')
+
+def createTerapeuticClassTable(cursor):
+    cursor.execute('''
+    CREATE TABLE IF NOT EXISTS TerapeuticClass(
+       TeraClassID INTEGER PRIMARY KEY NOT NULL,
+       Description TEXT NOT NULL
+    )''')
+
+def createListaTributaria(cursor):
+    cursor.execute('''
+    CREATE TABLE IF NOT EXISTS ListaTributaria(
+       ListaTribID INTEGER PRIMARY KEY NOT NULL,
+       Description TEXT NOT NULL
+    )''')
+
+#TEST AREA
+def populateListaTributaria(cursor):
+    pop = [(1,'Positiva'),
+           (2,'Neutra'),
+           (3,'Negativa')]
+    cursor.executemany('''
+    INSERT INTO ListaTributaria(ListaTribID,Description)
+       VALUES(?,?)''', pop)
