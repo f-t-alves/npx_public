@@ -7,7 +7,7 @@ def createProductTable(cursor):
        PrinAtivo TEXT NOT NULL,
        CodGGREM INTEGER NOT NULL,
        Registro INTEGER NOT NULL,
-       Description TEXT NOT NULL,
+       ProdDescription TEXT NOT NULL,
        TeraClassID TEXT NOT NULL, FOREIGN KEY (TeraClassID) REFERENCES TerapeuticClass(TeraClassID),
        ProdType TEXT NOT NULL,
        PF0p REAL NOT NULL,
@@ -76,7 +76,7 @@ def createListaTributaria(cursor):
     cursor.execute('''
     CREATE TABLE IF NOT EXISTS ListaTributaria(
        ListaTribID INTEGER PRIMARY KEY NOT NULL,
-       Description TEXT NOT NULL
+       ClassDescription TEXT NOT NULL
     )''')
 
 #TEST AREA
@@ -85,5 +85,5 @@ def populateListaTributaria(cursor):
            (2,'Neutra'),
            (3,'Negativa')]
     cursor.executemany('''
-    INSERT INTO ListaTributaria(ListaTribID,Description)
+    INSERT INTO ListaTributaria(ListaTribID,ClassDescription)
        VALUES(?,?)''', pop)
