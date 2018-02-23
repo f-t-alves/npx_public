@@ -3,12 +3,12 @@ def createProductTable(cursor):
     CREATE TABLE IF NOT EXISTS Products(
        EAN INTEGER PRIMARY KEY NOT NULL,
        ProdName TEXT NOT NULL,
-       LabID INTEGER NOT NULL, FOREIGN KEY (LabID) REFERENCES Laboratories(LabID),
+       LabID INTEGER NOT NULL,
        PrinAtivo TEXT NOT NULL,
        CodGGREM INTEGER NOT NULL,
        Registro INTEGER NOT NULL,
        ProdDescription TEXT NOT NULL,
-       TeraClassID TEXT NOT NULL, FOREIGN KEY (TeraClassID) REFERENCES TerapeuticClass(TeraClassID),
+       TeraClassID TEXT NOT NULL,
        ProdType TEXT NOT NULL,
        PF0p REAL NOT NULL,
        PF12p REAL NOT NULL,
@@ -32,9 +32,12 @@ def createProductTable(cursor):
        CAP INTEGER NOT NULL,
        CONFAZ87 INTEGER NOT NULL,
        AnalRecur INTEGER,
-       ListaTribID INTEGER NOT NULL, FOREIGN KEY (ListaTribID) REFERENCES ListaTributaria(ListaTribID),
+       ListaTribID INTEGER NOT NULL,
        Comerc2016 INTEGER NOT NULL,
-       Tarja INTEGER NOT NULL
+       Tarja INTEGER NOT NULL,
+       FOREIGN KEY (LabID) REFERENCES Laboratories(LabID),
+       FOREIGN KEY (TeraClassID) REFERENCES TerapeuticClass(TeraClassID),
+       FOREIGN KEY (ListaTribID) REFERENCES ListaTributaria(ListaTribID)
     )''')
 
 def createLaboratoryTable(cursor):
@@ -48,7 +51,7 @@ def createLaboratoryTable(cursor):
        LabContactEmail2 TEXT,
        LabContactPhone1 TEXT,
        LabContactPhone2 TEXT,
-       LabContactFax TEXT,
+       LabContactFax TEXT
     )''')
 
 def createProviderTable(cursor):
@@ -62,7 +65,7 @@ def createProviderTable(cursor):
        ProvContactEmail2 TEXT,
        ProvContactPhone1 TEXT,
        ProvContactPhone2 TEXT,
-       ProvContactFax TEXT,
+       ProvContactFax TEXT
     )''')
 
 def createTerapeuticClassTable(cursor):
