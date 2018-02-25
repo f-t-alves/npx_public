@@ -88,5 +88,5 @@ def populateListaTributaria(cursor):
            (2,'Neutra'),
            (3,'Negativa')]
     cursor.executemany('''
-    INSERT INTO ListaTributaria(ListaTribID,ClassDescription)
+    INSERT OR IGNORE INTO ListaTributaria(ListaTribID,ClassDescription)
        VALUES(?,?)''', pop)
