@@ -5,3 +5,5 @@ import os
 os.makedirs('data',exist_ok=True)
 
 db = sqlite3.connect('data/testdb.db')
+
+createDB(db)

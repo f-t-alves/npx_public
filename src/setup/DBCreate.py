@@ -82,6 +82,20 @@ def createListaTributaria(cursor):
        ClassDescription TEXT NOT NULL
     )''')
 
+def createStockTable(cursor):
+    cursor.execute('''
+    CREATE TABLE IF NOT EXISTS Stock(
+       StockID INTEGER PRIMARY KEY NOT NULL,
+       EAN INTEGER NOT NULL,
+       LotNumber TEXT,
+       Quantity INTEGER NOT NULL,
+       Location1 TEXT,
+       Location2 TEXT,
+       ManufactureDate TEXT,
+       ExpireDate TEXT,
+       FOREIGN KEY (EAN) REFERENCES Products(EAN)
+    )''')
+
 #TEST AREA
 def populateListaTributaria(cursor):
     pop = [(1,'Positiva'),

@@ -49,6 +49,15 @@ def createDB(db):
         traceback.print_exc()
 
     try:
+        createStockTable(cursor)
+        db.commit()
+        print('Stock table created')
+    except Exception as e:
+        db.rollback()
+        print('Stock table failed')
+        traceback.print_exc()
+
+    try:
         populateListaTributaria(cursor) #Test-only, add tributary info later
         db.commit()
         print('ListaTributaria table populated')
