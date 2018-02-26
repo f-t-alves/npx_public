@@ -56,3 +56,5 @@ docs/_build/
 
 # PyBuilder
 target/
+
+data/xml_test_clean\.xml
