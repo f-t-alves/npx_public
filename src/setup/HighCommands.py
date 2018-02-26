@@ -1,4 +1,4 @@
-from src.DBCreate import *
+from src.setup.DBCreate import *
 import traceback
 
 def createDB(db):

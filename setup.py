@@ -1,4 +1,4 @@
-from src.HighCommands import *
+from src.setup.HighCommands import *
 import sqlite3
 import os
 
