@@ -58,3 +58,5 @@ docs/_build/
 target/
 
 data/testdb\.db
+
+data/xml_test_clean\.xml
