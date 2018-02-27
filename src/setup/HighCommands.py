@@ -58,6 +58,15 @@ def createDB(db):
         traceback.print_exc()
 
     try:
+        createNFeTable(cursor)
+        db.commit()
+        print('NFe table created')
+    except Exception as e:
+        db.rollback()
+        print('NFe table failed')
+        traceback.print_exc()
+
+    try:
         populateListaTributaria(cursor) #Test-only, add tributary info later
         db.commit()
         print('ListaTributaria table populated')

@@ -96,6 +96,17 @@ def createStockTable(cursor):
        FOREIGN KEY (EAN) REFERENCES Products(EAN)
     )''')
 
+def createNFeTable(cursor):
+    cursor.execute('''
+    CREATE TABLE IF NOT EXISTS NFeControl(
+       NFeID TEXT PRIMARY KEY NOT NULL,
+       EmissionDate TEXT,
+       DueDate TEXT,
+       DueTotal REAL,
+       TaxTotal REAL,
+       XMLFile TEXT NOT NULL
+    )''')
+
 #TEST AREA
 def populateListaTributaria(cursor):
     pop = [(1,'Positiva'),
