@@ -84,7 +84,7 @@ def createListaTributaria(cursor):
 
 def createStockTable(cursor):
     cursor.execute('''
-    CREATE TABLE IF NOT EXISTS Stock(
+    CREATE TABLE IF NOT EXISTS StockControl(
        StockID INTEGER PRIMARY KEY NOT NULL,
        EAN INTEGER NOT NULL,
        LotNumber TEXT,
