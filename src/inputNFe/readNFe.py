@@ -1,10 +1,10 @@
 import xml.etree.ElementTree as eTree
 
 def readNFe(filename):
-    filename = cleanNFe(filename)
-    fileclean = open(filename)
+    cleanDict = cleanNFe(filename)
+    fileclean = open(cleanDict['filename'])
 
-    xml_tree = eTree.parse(filename)
+    xml_tree = eTree.parse(fileclean)
     xml_root = xml_tree.getroot()
 
     readDict = {}
@@ -21,8 +21,10 @@ def readNFe(filename):
 
     fileclean.close()
 
+    readDict['NFeID'] = NFeID
     readDict['prodEAN'] = prodEAN
     readDict['prodQuantity'] = prodQuantity
+    readDict['NFeFile'] = cleanDict['filein']
 
     return readDict
 
@@ -31,10 +33,16 @@ def readNFe(filename):
 
 
 def cleanNFe(filename):
+    outDict = {}
+
     filein = open(filename)
+    outDict['filein'] = filein.read()
+    filein.seek(0,0)
+
     temp = filename.split('.')
     temp.insert(-1,'_clean.')
     filename = ''.join(temp)
+    outDict['filename'] = filename
     fileout = open(filename,mode='w+')
 
     del_list = [' xmlns="http://www.portalfiscal.inf.br/nfe"',' xmlns="http://www.w3.org/2000/09/xmldsig#"']
@@ -46,4 +54,4 @@ def cleanNFe(filename):
     filein.close()
     fileout.close()
 
-    return filename
+    return outDict
