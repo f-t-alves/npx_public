@@ -106,12 +106,3 @@ def createNFeTable(cursor):
        TaxTotal REAL,
        XMLFile TEXT NOT NULL
     )''')
-
-#TEST AREA
-def populateListaTributaria(cursor):
-    pop = [(1,'Positiva'),
-           (2,'Neutra'),
-           (3,'Negativa')]
-    cursor.executemany('''
-    INSERT OR IGNORE INTO ListaTributaria(ListaTribID,ClassDescription)
-       VALUES(?,?)''', pop)
