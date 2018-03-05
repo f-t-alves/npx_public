@@ -13,3 +13,7 @@ filename = 'data/xml_test.xml'
 NFeDict = readNFe(filename)
 
 inputNFe2DB(NFeDict,db)
+
+LabInput(db)
+MedInput(db)
+ProvCompInput(db)
