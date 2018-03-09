@@ -28,3 +28,8 @@ class PageThree(tk.Frame):
 
         button1 = ttk.Button(self, text="Back to Home",command=lambda: controller.show_frame(StP.StartPage))
         button1.pack()
+
+
+        SubmitButton = ttk.Button(self,text='Submit',command=lambda:InpCla.submProv(a.entries),
+         width = 30)
+        SubmitButton.pack()

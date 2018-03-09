@@ -157,66 +157,66 @@ app.mainloop()
 
 
 
-# class InputBoxes:
-#
-#     def __init__(self,InputNames,Window):
-#
-#         self.InputNames = InputNames
-#         self.EntryNumbers = len(InputNames)
-#         self.entries = []
-#         self.master = Window
-#
-#         # if int(self.grid_info()["row"]) > 0:
-#
-#
-#         self.create_entry_widgets(self.EntryNumbers,self.InputNames,
-#         self.entries)
-#
-#     def clear(self,master):
-#         L = self.master.grid_slaves()
-#         for l in L:
-#             l.destroy()
-#
-#     def create_entry_widgets(self,EntryNumbers,InputNames,entries,master):
-#
-#         self.ctrl = int(EntryNumbers)
-#         self.List = InputNames
-#
-#         # for i in range(self.ctrl):
-#         #
-#         #     if int(self.SubmitButton.grid_info()["row"]) > 0:
-#         #         self.SubmitButton.grid_remove()
-#         #     self.text = Label(text = self.List[i],bg='sky blue')
-#         #
-#         #     self.text.grid_forget()
-#
-#
-#
-#         for i in range(self.ctrl):
-#
-#             self.text = Label(text = self.List[i],bg='sky blue')
-#
-#             self.text.master.grid(row=2+i, column = 1, sticky = W)
-#
-#         for i in range(self.ctrl):
-#             self.entr = Entry(bg='azure')
-#             self.entr.master.grid(row=2+i, column = 2, sticky = W)
-#             self.entries.append(self.entr)
-#
-#         self.SubmitButton = Button(text='Submit',command = self.submit,
-#          width = 30)
-#
-#         self.SubmitButton.master.grid(row=self.ctrl+3,column=1, columnspan = 3)
-#         # print('',self.SubmitButton.grid_info())
-#
-#     def submit(self):
-#         self.Content =[]
-#         for self.entry in self.entries:
-#             self.Content.append(self.entry.get())
-#         self.clear()
-#         return(self.Content)
-#
-#
+class InputBoxes:
+
+    def __init__(self,InputNames,Window):
+
+        self.InputNames = InputNames
+        self.EntryNumbers = len(InputNames)
+        self.entries = []
+        self.master = Window
+
+        # if int(self.grid_info()["row"]) > 0:
+
+
+        self.create_entry_widgets(self.EntryNumbers,self.InputNames,
+        self.entries)
+
+    def clear(self,master):
+        L = self.master.grid_slaves()
+        for l in L:
+            l.destroy()
+
+    def create_entry_widgets(self,EntryNumbers,InputNames,entries,master):
+
+        self.ctrl = int(EntryNumbers)
+        self.List = InputNames
+
+        # for i in range(self.ctrl):
+        #
+        #     if int(self.SubmitButton.grid_info()["row"]) > 0:
+        #         self.SubmitButton.grid_remove()
+        #     self.text = Label(text = self.List[i],bg='sky blue')
+        #
+        #     self.text.grid_forget()
+
+
+
+        for i in range(self.ctrl):
+
+            self.text = Label(text = self.List[i],bg='sky blue')
+
+            self.text.master.grid(row=2+i, column = 1, sticky = W)
+
+        for i in range(self.ctrl):
+            self.entr = Entry(bg='azure')
+            self.entr.master.grid(row=2+i, column = 2, sticky = W)
+            self.entries.append(self.entr)
+
+        self.SubmitButton = Button(text='Submit',command = self.submit,
+         width = 30)
+
+        self.SubmitButton.master.grid(row=self.ctrl+3,column=1, columnspan = 3)
+        # print('',self.SubmitButton.grid_info())
+
+    def submit(self):
+        self.Content =[]
+        for self.entry in self.entries:
+            self.Content.append(self.entry.get())
+        self.clear()
+        return(self.Content)
+
+
 #
 # Lab = ['LabName','LabCNPJ','LabOfficeAddress','LabContactEmail1',
 # 'LabContactEmail2', 'LabContactPhone1', 'LabContactPhone2', 'LabContactFax']

@@ -101,23 +101,86 @@ class StrInputBoxes(tk.Frame):
             self.entries.append(self.entr)
 
 
+LabVarInput = []
+
+def submLab(entries):
+    global LabVarInput
+    Content = []
+    entries = entries
+
+    for entry in entries:
+        Content.append(entry.get())
+    LabVarInput.append(Content)
+    print(Content)
+
+ProvVarInput = []
+
+def submProv(entries):
+    global ProvVarInput
+    Content = []
+    entries = entries
+
+    for entry in entries:
+        Content.append(entry.get())
+    ProvVarInput.append(Content)
+    print(Content)
+
+
+class MedSubmit:
+
+    def __init__(self):
+
+    def submMed1(self,entries1,entries2,entries3):
+
+        self.Content1 = []
+        entries = entries1 + entries2 + entries3
+
+        for entry in entries:
+            Content1.append(entry.get())
+        
+        print(Content)
+
+    def submMed2(self,entries):
+
+        Content = []
+        entries = entries
+
+        for entry in entries:
+            Content.append(entry.get())
+        VarInput.append(Content)
+        print(Content)
+
+    def submMed3(self,entries):
+
+        Content = []
+        entries = entries
+
+        for entry in entries:
+            Content.append(entry.get())
+        VarInput.append(Content)
+        print(Content)
+
 
 # class submit(StrInputBoxes,IntInputBoxes,FloatInputBoxes):
 #
-#         self.SubmitButton = ttk.Button(self,text='Submit',command = self.submit,
-#          width = 30)
-#         self.SubmitButton.grid(row=self.ctrl+3,column=1, columnspan = 3,pady=10,padx=10)
+#     def __init__(self,InputNames,EntryNumbers,parent):
 #
-#         self.Content =[]
+#         def subm(self,a):
+#             self.a = a
+#             self.Content =[]
 #
-#         for self.entry in self.entries:
-#             self.Content.append(self.entry.get())
+#             for self.entry in self.entries:
+#                 self.Content.append(self.entry.get())
 #
-#         print(self.Content)
+#             print(self.Content)
 #
-#         for i in range(self.ctrl):
-#             self.entr = tk.Entry(self,bg='azure')
-#             #self.entr.grid(row=i, column = 2, sticky = 'W',pady=2)
-#             self.entr.delete(0, 'end')
+#             # for i in range(self.ctrl):
+#             #     self.entr = tk.Entry(self,bg='azure')
+#             #     #self.entr.grid(row=i, column = 2, sticky = 'W',pady=2)
+#             #     self.entr.delete(0, 'end')
 #
-#         (self.Content)
+#             return(self.Content)
+#
+#         # self.SubmitButton = ttk.Button(self,text='Submit',command=self.subm,
+#         #  width = 30)
+#         # self.SubmitButton.grid(row=5,column=1, columnspan = 3,pady=10,padx=10)

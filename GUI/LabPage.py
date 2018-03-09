@@ -25,5 +25,11 @@ class PageTwo(tk.Frame):
         a.pack()
 
 
+
+
         button1 = ttk.Button(self, text="Back to Home",command=lambda: controller.show_frame(StP.StartPage))
         button1.pack()
+
+        SubmitButton = ttk.Button(self,text='Submit',command=lambda:InpCla.submLab(a.entries),
+         width = 30)
+        SubmitButton.pack()

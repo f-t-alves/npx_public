@@ -37,18 +37,18 @@ class MedPage1(tk.Frame):
 
         a.grid(row=1,column=1,sticky='w')
         b.grid(row=1,column=2,rowspan=2,sticky='w')
-        c.grid(row=2,column=1,sticky='w')
+        c.grid(row=1,column=3,sticky='w')
         c.grid_rowconfigure(1, weight=4)
         c.grid_rowconfigure(2, weight=1)
 
         button1 = ttk.Button(self, text="Back to Home",command=lambda: controller.show_frame(StP.StartPage))
-        button1.grid(row=4,column=1,columnspan = 2, ipadx = 2)
+        button1.grid(row=4,column=2,columnspan = 1,sticky = 'nwse')
         button2 = ttk.Button(self, text="MedPage1",command=lambda: controller.show_frame(MedPage1))
-        button2.grid(row=3,column=1,columnspan = 1,pady=1,sticky='e')
+        button2.grid(row=3,column=2,columnspan = 1,pady=1,sticky='w')
         button3 = ttk.Button(self, text="MedPage2",command=lambda: controller.show_frame(MedPage2))
-        button3.grid(row=3,column=2,columnspan = 1,pady=1,sticky='w')
+        button3.grid(row=3,column=2,columnspan = 1,pady=1)
         button4 = ttk.Button(self, text="MedPage3",command=lambda: controller.show_frame(MedPage3))
-        button4.grid(row=3,column=3,columnspan = 1,pady=1,sticky='w')
+        button4.grid(row=3,column=2,columnspan = 1,pady=1,sticky='e')
 
 class MedPage2(tk.Frame):
 
@@ -56,15 +56,16 @@ class MedPage2(tk.Frame):
         tk.Frame.__init__(self,parent,width=300,height=300)
 
         tk.Frame.grid_rowconfigure(self,2, weight=0)
-        tk.Frame.grid_rowconfigure(self,3, weight=3)
-        tk.Frame.grid_columnconfigure(self,0, weight=1)
-        tk.Frame.grid_columnconfigure(self,1, weight=3)
-        tk.Frame.grid_columnconfigure(self,2, weight=1)
+        tk.Frame.grid_rowconfigure(self,1, weight=0)
+        tk.Frame.grid_columnconfigure(self,0, weight=0)
+        tk.Frame.grid_columnconfigure(self,1, weight=0)
+        tk.Frame.grid_columnconfigure(self,2, weight=0)
         #tk.Frame.grid_propagate(False)
 
 
         label = tk.Label(self, text='Products 2', font = LARGE_FONT)
         label.grid(row=0,column=0,columnspan=2,pady=1,padx=1,sticky='n')
+
 
         Product = ['PF0p','PF12p','PF17p','PF17p_ALC']
         Product2 = ['PF17p5','PF17p5_ALC','PF18p','PF18p_ALC']
@@ -73,31 +74,31 @@ class MedPage2(tk.Frame):
         a = InpCla.FloatInputBoxes(Product,4,self)
         b = InpCla.FloatInputBoxes(Product2,4,self)
         c = InpCla.FloatInputBoxes(Product3,1,self)
-        a.grid(row=1,column=0,columnspan=1,sticky='e',padx=1)
+        a.grid(row=1,column=0,columnspan=1,sticky='e',padx=0)
         b.grid(row=1,column=1,columnspan=1,sticky='w')
-        c.grid(row=2,column=0,columnspan=2,sticky='n',pady=1)
+        c.grid(row=2,column=0,columnspan=1,sticky='e',pady=1)
 
 
         button1 = ttk.Button(self, text="MedPage1",command=lambda: controller.show_frame(MedPage1))
-        button1.grid(row=3,column=0,columnspan = 1,pady=10,sticky='e')
+        button1.grid(row=3,column=0,columnspan = 1,pady=1,sticky='w')
         button2 = ttk.Button(self, text="MedPage2",command=lambda: controller.show_frame(MedPage2))
-        button2.grid(row=3,column=1,columnspan = 1,pady=10,sticky='w')
+        button2.grid(row=3,column=0,columnspan = 1,pady=1)
         button3 = ttk.Button(self, text="MedPage3",command=lambda: controller.show_frame(MedPage3))
-        button3.grid(row=3,column=2,columnspan =1,pady=10,sticky='w')
-        button3.grid_columnconfigure(3, weight=1)
-        button3.grid_columnconfigure(2, weight=5)
+        button3.grid(row=3,column=0,columnspan =1,pady=1,sticky='e')
+        button4 = ttk.Button(self, text="Back to Home",command=lambda: controller.show_frame(StP.StartPage))
+        button4.grid(row=4,column=0,columnspan = 1,sticky = 'nwse')
 
 class MedPage3(tk.Frame):
 
     def __init__(self,parent,controller):
         tk.Frame.__init__(self,parent,width=700,height=700)
 
-        tk.Frame.grid_rowconfigure(self,2, weight=6)
-        tk.Frame.grid_rowconfigure(self,3, weight=1)
-        tk.Frame.grid_columnconfigure(self,0, weight=1)
-        tk.Frame.grid_columnconfigure(self,1, weight=3)
-        tk.Frame.grid_columnconfigure(self,2, weight=3)
-        #tk.Frame.grid_propagate(False)
+        tk.Frame.grid_rowconfigure(self,2, weight=0)
+        tk.Frame.grid_rowconfigure(self,3, weight=0)
+        tk.Frame.grid_columnconfigure(self,0, weight=0)
+        tk.Frame.grid_columnconfigure(self,1, weight=0)
+        tk.Frame.grid_columnconfigure(self,2, weight=0)
+
 
 
         label = tk.Label(self, text='Products 3', font = LARGE_FONT)
@@ -110,15 +111,20 @@ class MedPage3(tk.Frame):
         a = InpCla.FloatInputBoxes(Product,4,self)
         b = InpCla.FloatInputBoxes(Product2,4,self)
         c = InpCla.FloatInputBoxes(Product3,1,self)
-        a.grid(row=1,column=0,columnspan=1,sticky='e',padx=1)
+        a.grid(row=1,column=0,columnspan=1,sticky='e')
         b.grid(row=1,column=1,columnspan=1,sticky='w')
-        c.grid(row=2,column=0,columnspan=2,sticky='n',pady=1)
+        c.grid(row=2,column=0,columnspan=1,sticky='e',pady=0)
+        a.grid_propagate(True)
+        b.grid_propagate(True)
+        c.grid_propagate(True)
 
 
 
         button1 = ttk.Button(self, text="MedPage1",command=lambda: controller.show_frame(MedPage1))
-        button1.grid(row=3,rowspan=2,column=0,columnspan = 1,pady=1,sticky='e')
+        button1.grid(row=3,column=0,columnspan = 1,pady=1,sticky='w')
         button2 = ttk.Button(self, text="MedPage2",command=lambda: controller.show_frame(MedPage2))
-        button2.grid(row=3,rowspan=2,column=1,columnspan = 1,pady=1,sticky='w')
+        button2.grid(row=3,column=0,columnspan = 1,pady=1)
         button3 = ttk.Button(self, text="MedPage3",command=lambda: controller.show_frame(MedPage3))
-        button3.grid(row=3,rowspan=2,column=2,columnspan = 1,pady=1,sticky='w')
+        button3.grid(row=3,column=0,columnspan = 1,pady=1,sticky='e')
+        button4 = ttk.Button(self, text="Back to Home",command=lambda: controller.show_frame(StP.StartPage))
+        button4.grid(row=4,column=0,columnspan = 1,sticky = 'nwse')

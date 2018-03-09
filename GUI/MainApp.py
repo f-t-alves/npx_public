@@ -5,6 +5,7 @@ import LabPage as LabP
 import MedPage as MedP
 import ProviderPage as ProvP
 import StartPage as StP
+import InputClasses as InpCla
 
 
 LARGE_FONT= ("Verdana", 12)
@@ -81,6 +82,8 @@ class MainApp(tk.Tk):
 
 
 app = MainApp()
-app.geometry("1240x720")
+app.geometry("940x270")
 app.resizable(width=True, height=True)
 app.mainloop()
+
+print(InpCla.VarInput)
