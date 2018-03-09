@@ -43,13 +43,13 @@ class FloatInputBoxes(tk.Frame):
 
             self.text = tk.Label(self,text = self.List[i],font=SMALL_FONT)
 
-            self.text.grid(row=i, column = 0, sticky = 'E',pady=2)
+            self.text.grid(row=i, column = 0, sticky = 'E',padx=10,pady=2)
             self.text.grid_columnconfigure(1,weight=1)
 
         for i in range(self.ctrl1):
 
             self.entr = tk.Entry(self,bg='azure')
-            self.entr.grid(row=i, column = 1, sticky = 'E',pady=2)
+            self.entr.grid(row=i, column = 1,padx=10,pady=2,sticky='e')
             self.entries.append(self.entr)
 
 
@@ -74,13 +74,13 @@ class IntInputBoxes(tk.Frame):
 
             self.text = tk.Label(self,text = self.List[i],font=SMALL_FONT)
 
-            self.text.grid(row=i, column = 0, sticky = 'E',pady=2)
+            self.text.grid(row=i, column = 0, sticky = 'E',padx=10,pady=2)
             self.text.grid_columnconfigure(1,weight=1)
 
         for i in range(self.ctrl1):
 
             self.entr = tk.Entry(self,bg='azure')
-            self.entr.grid(row=i, column = 1, sticky = 'E',pady=2)
+            self.entr.grid(row=i, column = 1,padx=10,pady=2,sticky='e')
             self.entries.append(self.entr)
 
 
@@ -104,13 +104,13 @@ class StrInputBoxes(tk.Frame):
 
             self.text = tk.Label(self,text = self.List[i],font=SMALL_FONT)
 
-            self.text.grid(row=i, column = 0, sticky = 'E',pady=2)
+            self.text.grid(row=i, column = 0, sticky = 'E',padx=10,pady=2)
             self.text.grid_columnconfigure(1,weight=1)
 
         for i in range(self.ctrl1):
 
             self.entr = tk.Entry(self,bg='azure')
-            self.entr.grid(row=i, column = 1, sticky = 'E',pady=2)
+            self.entr.grid(row=i, column = 1,padx=10,pady=2,sticky='e')
             self.entries.append(self.entr)
 
 

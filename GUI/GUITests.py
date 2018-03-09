@@ -97,6 +97,8 @@ class PageThree(tk.Frame):
         button1 = ttk.Button(self, text="Back to Home",command=lambda: controller.show_frame(StartPage))
         button1.pack()
 
+        f = Figure(figsize)
+
 
 
 app = MainApp()
