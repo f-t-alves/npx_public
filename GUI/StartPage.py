@@ -4,6 +4,7 @@ from tkinter import ttk
 import LabPage as LabP
 import MedPage as MedP
 import ProviderPage as ProvP
+import NewMedPage as NMP
 
 
 LARGE_FONT= ("Verdana", 12)
@@ -22,9 +23,11 @@ class StartPage(tk.Frame):
         s = ttk.Style()
         s.configure('Front Page Button.TButton', font = NORM_FONT)
 
-        button = ttk.Button(self, text="Med Input",style='Front Page Button.TButton',command=lambda: controller.show_frame(MedP.MedPage1))
+        button = ttk.Button(self, text="Med Input",style='Front Page Button.TButton',command=lambda: controller.show_frame(NMP.MedPage))
         button.pack(ipady=10,fill ='x')
         button2 = ttk.Button(self, text="Lab Input",style='Front Page Button.TButton',command=lambda: controller.show_frame(LabP.PageTwo))
         button2.pack(ipady=10,fill ='x')
         button3 = ttk.Button(self, text="Provider Input",style='Front Page Button.TButton',command=lambda: controller.show_frame(ProvP.PageThree))
         button3.pack(ipady=10,fill ='x')
+        # button4 = ttk.Button(self, text="Med Input",style='Front Page Button.TButton',command=lambda: controller.show_frame(NMP.MedPage))
+        # button4.pack(ipady=10,fill ='x')

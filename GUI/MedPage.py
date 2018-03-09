@@ -31,9 +31,11 @@ class MedPage1(tk.Frame):
         'Comerc2016','Tarja']
         Product3 = ['EAN','LabID','CodGGREM','Registro']
 
-        a = InpCla.StrInputBoxes(Product,4,self)
-        b = InpCla.IntInputBoxes(Product2,7,self)
-        c = InpCla.IntInputBoxes(Product3,4,self)
+        #'Float' = 1 ou 'Int' = 2 ou 'Str' = 3
+
+        a = InpCla.InputBoxes(Product,3,4,self)
+        b = InpCla.InputBoxes(Product2,2,7,self)
+        c = InpCla.InputBoxes(Product3,2,4,self)
 
         a.grid(row=1,column=1,sticky='w')
         b.grid(row=1,column=2,rowspan=2,sticky='w')
@@ -71,13 +73,16 @@ class MedPage2(tk.Frame):
         Product2 = ['PF17p5','PF17p5_ALC','PF18p','PF18p_ALC']
         Product3 = ['PF20p']
 
-        a = InpCla.FloatInputBoxes(Product,4,self)
-        b = InpCla.FloatInputBoxes(Product2,4,self)
-        c = InpCla.FloatInputBoxes(Product3,1,self)
+        #'Float' = 1 ou 'Int' = 2 ou 'Str' = 3
+
+        a = InpCla.InputBoxes(Product,1,4,self)
+        b = InpCla.InputBoxes(Product2,1,4,self)
+        c = InpCla.InputBoxes(Product3,1,1,self)
         a.grid(row=1,column=0,columnspan=1,sticky='e',padx=0)
         b.grid(row=1,column=1,columnspan=1,sticky='w')
         c.grid(row=2,column=0,columnspan=1,sticky='e',pady=1)
 
+        print(a.entries)
 
         button1 = ttk.Button(self, text="MedPage1",command=lambda: controller.show_frame(MedPage1))
         button1.grid(row=3,column=0,columnspan = 1,pady=1,sticky='w')
@@ -108,9 +113,11 @@ class MedPage3(tk.Frame):
         Product2 = ['PMC17p5','PMC17p5_ALC','PMC18p','PMC18p_ALC']
         Product3 = ['PMC20p']
 
-        a = InpCla.FloatInputBoxes(Product,4,self)
-        b = InpCla.FloatInputBoxes(Product2,4,self)
-        c = InpCla.FloatInputBoxes(Product3,1,self)
+        #'Float' = 1 ou 'Int' = 2 ou 'Str' = 3
+
+        a = InpCla.InputBoxes(Product,1,4,self)
+        b = InpCla.InputBoxes(Product2,1,4,self)
+        c = InpCla.InputBoxes(Product3,1,1,self)
         a.grid(row=1,column=0,columnspan=1,sticky='e')
         b.grid(row=1,column=1,columnspan=1,sticky='w')
         c.grid(row=2,column=0,columnspan=1,sticky='e',pady=0)
@@ -128,3 +135,8 @@ class MedPage3(tk.Frame):
         button3.grid(row=3,column=0,columnspan = 1,pady=1,sticky='e')
         button4 = ttk.Button(self, text="Back to Home",command=lambda: controller.show_frame(StP.StartPage))
         button4.grid(row=4,column=0,columnspan = 1,sticky = 'nwse')
+        # SubmitButton = ttk.Button(self,text='Submit',command=lambda:
+        # InpCla.submMedToT(MedPage1.a.entries,MedPage1.b.entries,
+        # MedPage1.c.entries,MedPage2.a.entries,MedPage2.b.entries,MedPage2.c.entries,
+        # a.entries,b.entries,c.entries,),width = 30)
+        # SubmitButton.grid(row=5,column=0)

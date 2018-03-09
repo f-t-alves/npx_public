@@ -6,7 +6,7 @@ import MedPage as MedP
 import ProviderPage as ProvP
 import StartPage as StP
 import InputClasses as InpCla
-
+import NewMedPage as NMP
 
 LARGE_FONT= ("Verdana", 12)
 NORM_FONT= ("Verdana", 10)
@@ -50,16 +50,13 @@ class MainApp(tk.Tk):
         menubar.add_cascade(label='File', menu=filemenu)
 
 
-        # button = ttk.Button(self, text="Med Input",style='Front Page Button.TButton',command=lambda: controller.show_frame(PageOne))
-        # button.pack(ipady=10,fill ='x')
-
 
 
         tk.Tk.config(self,menu=menubar)
 
         self.frames = {}
 
-        for F in(StP.StartPage,MedP.MedPage1,MedP.MedPage2,MedP.MedPage3,LabP.PageTwo,ProvP.PageThree):
+        for F in(StP.StartPage,MedP.MedPage1,MedP.MedPage2,MedP.MedPage3,LabP.PageTwo,ProvP.PageThree,NMP.MedPage):
 
             frame = F(master, self)
 
@@ -75,6 +72,7 @@ class MainApp(tk.Tk):
 
     def show_frame(self, ctrl):
 
+
         frame = self.frames[ctrl]
         frame.tkraise()
 
@@ -85,5 +83,3 @@ app = MainApp()
 app.geometry("940x270")
 app.resizable(width=True, height=True)
 app.mainloop()
-
-print(InpCla.VarInput)

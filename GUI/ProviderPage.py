@@ -20,10 +20,12 @@ class PageThree(tk.Frame):
         label = tk.Label(self, text='Provider Company', font = LARGE_FONT)
         label.pack(pady=10,padx=10)
 
+        #'Float' = 1 ou 'Int' = 2 ou 'Str' = 3
+
         ProviderComp = ['ProvCompName','ProvCompCNPJ','ProvOfficeAddress',
         'ProvContactEmail1','ProvContactEmail2','ProvContactPhone1','ProvContactPhone2',
         'ProvContactFax']
-        a = InpCla.StrInputBoxes(ProviderComp,8,self)
+        a = InpCla.InputBoxes(ProviderComp,3,8,self)
         a.pack()
 
         button1 = ttk.Button(self, text="Back to Home",command=lambda: controller.show_frame(StP.StartPage))

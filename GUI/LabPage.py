@@ -21,7 +21,9 @@ class PageTwo(tk.Frame):
         LabName =['LabName','LabCNPJ','LabOfficeAddress','LabContactEmail1',
         'LabContactEmail2', 'LabContactPhone1', 'LabContactPhone2',
         'LabContactFax']
-        a = InpCla.StrInputBoxes(LabName,8,self)
+
+        #'Float' = 1 ou 'Int' = 2 ou 'Str' = 3
+        a = InpCla.InputBoxes(LabName,3,8,self)
         a.pack()
 
 

@@ -10,95 +10,72 @@ SMALL_FONT= ("Verdana", 7)
 
 
 
-class FloatInputBoxes(tk.Frame):
+class InputBoxes(tk.Frame):
 
-    def __init__(self,InputNames,EntryNumbers,parent):
+    def __init__(self,InputNames,Type,EntryNumbers,parent):
         tk.Frame.__init__(self,parent)
         self.InputNames = InputNames
         self.EntryNumbers = EntryNumbers
         self.entries = []
 
-        self.create_entry_widgets(self.EntryNumbers,self.InputNames,
+        #'Float' = 1 ou 'Int' = 2 ou 'Str' = 3
+
+        self.Type = Type
+
+        self.create_entry_widgets(self.EntryNumbers,self.Type,self.InputNames,
         self.entries)
 
-    def create_entry_widgets(self,EntryNumbers,InputNames,entries):
+    def create_entry_widgets(self,EntryNumbers,Type,InputNames,entries):
 
         self.ctrl1 = int(EntryNumbers)
         self.List = InputNames
+        self.TypeTest = Type
 
-        for i in range(self.ctrl1):
+        if self.TypeTest == 1:
 
-            self.text = tk.Label(self,text = self.List[i],font=SMALL_FONT)
+            for i in range(self.ctrl1):
 
-            self.text.grid(row=i, column = 0, sticky = 'E',padx=10,pady=2)
-            self.text.grid_columnconfigure(1,weight=1)
+                self.text = tk.Label(self,text = self.List[i],font=SMALL_FONT,width = 15)
 
-        for i in range(self.ctrl1):
+                self.text.grid(row=i, column = 0, sticky = 'e',padx=10,pady=2)
+                self.text.grid_columnconfigure(1,weight=1)
 
-            self.entr = tk.Entry(self,bg='azure')
-            self.entr.grid(row=i, column = 1,padx=10,pady=2,sticky='e')
-            self.entries.append(self.entr)
+            for i in range(self.ctrl1):
 
+                self.entr = tk.Entry(self,bg='azure',textvariable=tk.DoubleVar())
+                self.entr.grid(row=i, column = 1,padx=10,pady=2,sticky='e')
+                self.entries.append(self.entr)
 
+        elif self.TypeTest == 2:
 
-class IntInputBoxes(tk.Frame):
+            for i in range(self.ctrl1):
 
-    def __init__(self,InputNames,EntryNumbers,parent):
-        tk.Frame.__init__(self,parent)
-        self.InputNames = InputNames
-        self.EntryNumbers = EntryNumbers
-        self.entries = []
+                self.text = tk.Label(self,text = self.List[i],font=SMALL_FONT,width = 15)
 
-        self.create_entry_widgets(self.EntryNumbers,self.InputNames,
-        self.entries)
+                self.text.grid(row=i, column = 0, sticky = 'e',padx=10,pady=2)
+                self.text.grid_columnconfigure(1,weight=1)
 
-    def create_entry_widgets(self,EntryNumbers,InputNames,entries):
+            for i in range(self.ctrl1):
 
-        self.ctrl1 = int(EntryNumbers)
-        self.List = InputNames
+                self.entr = tk.Entry(self,bg='azure',textvariable=tk.IntVar())
+                self.entr.grid(row=i, column = 1,padx=10,pady=2,sticky='e')
+                self.entries.append(self.entr)
 
-        for i in range(self.ctrl1):
+        elif self.TypeTest == 3:
 
-            self.text = tk.Label(self,text = self.List[i],font=SMALL_FONT)
+            for i in range(self.ctrl1):
 
-            self.text.grid(row=i, column = 0, sticky = 'E',padx=10,pady=2)
-            self.text.grid_columnconfigure(1,weight=1)
+                self.text = tk.Label(self,text = self.List[i],font=SMALL_FONT,width = 15)
 
-        for i in range(self.ctrl1):
+                self.text.grid(row=i, column = 0, sticky = 'e',padx=10,pady=2)
+                self.text.grid_columnconfigure(1,weight=1)
 
-            self.entr = tk.Entry(self,bg='azure')
-            self.entr.grid(row=i, column = 1,padx=10,pady=2,sticky='e')
-            self.entries.append(self.entr)
+            for i in range(self.ctrl1):
 
+                self.entr = tk.Entry(self,bg='azure',textvariable=tk.StringVar())
+                self.entr.grid(row=i, column = 1,padx=10,pady=2,sticky='e')
+                self.entries.append(self.entr)
 
-class StrInputBoxes(tk.Frame):
-
-    def __init__(self,InputNames,EntryNumbers,parent):
-        tk.Frame.__init__(self,parent)
-        self.InputNames = InputNames
-        self.EntryNumbers = EntryNumbers
-        self.entries = []
-
-        self.create_entry_widgets(self.EntryNumbers,self.InputNames,
-        self.entries)
-
-    def create_entry_widgets(self,EntryNumbers,InputNames,entries):
-
-        self.ctrl1 = int(EntryNumbers)
-        self.List = InputNames
-
-        for i in range(self.ctrl1):
-
-            self.text = tk.Label(self,text = self.List[i],font=SMALL_FONT)
-
-            self.text.grid(row=i, column = 0, sticky = 'E',padx=10,pady=2)
-            self.text.grid_columnconfigure(1,weight=1)
-
-        for i in range(self.ctrl1):
-
-            self.entr = tk.Entry(self,bg='azure')
-            self.entr.grid(row=i, column = 1,padx=10,pady=2,sticky='e')
-            self.entries.append(self.entr)
 
 
 LabVarInput = []
@@ -126,61 +103,85 @@ def submProv(entries):
     print(Content)
 
 
+
+
+
+def submMedToT(entries1,entries2,entries3,entries4,entries5,entries6,entries7,entries8,entries9):
+
+    Content1 = []
+    entries = entries1 + entries2 + entries3 + entries4 + entries5 + entries6 + entries7 + entries8 + entries9
+
+    for entry in entries:
+        Content1.append(entry.get())
+
+    print(Content1)
+
+
+
+
+
+
 class MedSubmit:
 
     def __init__(self):
 
-    def submMed1(self,entries1,entries2,entries3):
+        def submMed1(self,entries1,entries2,entries3):
 
-        self.Content1 = []
-        entries = entries1 + entries2 + entries3
+            self.Content1 = []
+            entries = entries1 + entries2 + entries3
 
-        for entry in entries:
-            Content1.append(entry.get())
-        
-        print(Content)
+            for entry in entries:
+                Content1.append(entry.get())
 
-    def submMed2(self,entries):
+            print(Content1)
 
-        Content = []
-        entries = entries
+        def submMed2(self,entries):
 
-        for entry in entries:
-            Content.append(entry.get())
-        VarInput.append(Content)
-        print(Content)
+            Content2 = []
+            entries = entries
 
-    def submMed3(self,entries):
+            for entry in entries:
+                Content2.append(entry.get())
 
-        Content = []
-        entries = entries
+            print(Content2)
 
-        for entry in entries:
-            Content.append(entry.get())
-        VarInput.append(Content)
-        print(Content)
+        def submMed3(self,entries):
+
+            Content3 = []
+            entries = entries
+
+            for entry in entries:
+                Content3.append(entry.get())
+
+            print(Content3)
 
 
-# class submit(StrInputBoxes,IntInputBoxes,FloatInputBoxes):
-#
-#     def __init__(self,InputNames,EntryNumbers,parent):
-#
-#         def subm(self,a):
-#             self.a = a
-#             self.Content =[]
-#
-#             for self.entry in self.entries:
-#                 self.Content.append(self.entry.get())
-#
-#             print(self.Content)
-#
-#             # for i in range(self.ctrl):
-#             #     self.entr = tk.Entry(self,bg='azure')
-#             #     #self.entr.grid(row=i, column = 2, sticky = 'W',pady=2)
-#             #     self.entr.delete(0, 'end')
-#
-#             return(self.Content)
-#
-#         # self.SubmitButton = ttk.Button(self,text='Submit',command=self.subm,
-#         #  width = 30)
-#         # self.SubmitButton.grid(row=5,column=1, columnspan = 3,pady=10,padx=10)
+class submit(InputBoxes):
+
+    def __init__(self,InputNames,EntryNumbers,entries,parent):
+
+
+        self.entries = entries
+
+        def input_box(self):
+
+
+
+
+            self.Content =[]
+
+            for self.entry in self.entries:
+                self.Content.append(self.entry.get())
+
+            print(self.Content)
+
+            # for i in range(self.ctrl):
+            #     self.entr = tk.Entry(self,bg='azure')
+            #     #self.entr.grid(row=i, column = 2, sticky = 'W',pady=2)
+            #     self.entr.delete(0, 'end')
+
+            return(self.Content)
+
+        # self.SubmitButton = ttk.Button(self,text='Submit',command=self.subm,
+        #  width = 30)
+        # self.SubmitButton.grid(row=5,column=1, columnspan = 3,pady=10,padx=10)
