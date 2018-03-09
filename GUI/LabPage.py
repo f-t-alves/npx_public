@@ -2,7 +2,7 @@
 import tkinter as tk
 from tkinter import ttk
 import InputClasses as InpCla
-# from MainApp import StartPage
+import StartPage as StP
 
 LARGE_FONT= ("Verdana", 12)
 NORM_FONT= ("Verdana", 10)
@@ -25,5 +25,5 @@ class PageTwo(tk.Frame):
         a.pack()
 
 
-        button1 = ttk.Button(self, text="Back to Home",command=lambda: controller.show_frame(StartPage))
+        button1 = ttk.Button(self, text="Back to Home",command=lambda: controller.show_frame(StP.StartPage))
         button1.pack()

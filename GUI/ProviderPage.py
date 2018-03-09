@@ -2,7 +2,7 @@
 import tkinter as tk
 from tkinter import ttk
 import InputClasses as InpCla
-# import MainApp as MaP
+import StartPage as StP
 
 
 LARGE_FONT= ("Verdana", 12)
@@ -26,5 +26,5 @@ class PageThree(tk.Frame):
         a = InpCla.StrInputBoxes(ProviderComp,8,self)
         a.pack()
 
-        button1 = ttk.Button(self, text="Back to Home",command=lambda: controller.show_frame(MaP.StartPage))
+        button1 = ttk.Button(self, text="Back to Home",command=lambda: controller.show_frame(StP.StartPage))
         button1.pack()

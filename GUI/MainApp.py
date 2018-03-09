@@ -4,6 +4,7 @@ from tkinter import ttk
 import LabPage as LabP
 import MedPage as MedP
 import ProviderPage as ProvP
+import StartPage as StP
 
 
 LARGE_FONT= ("Verdana", 12)
@@ -57,7 +58,7 @@ class MainApp(tk.Tk):
 
         self.frames = {}
 
-        for F in(StartPage,MedP.MedPage1,MedP.MedPage2,MedP.MedPage3,LabP.PageTwo,ProvP.PageThree):
+        for F in(StP.StartPage,MedP.MedPage1,MedP.MedPage2,MedP.MedPage3,LabP.PageTwo,ProvP.PageThree):
 
             frame = F(master, self)
 
@@ -69,7 +70,7 @@ class MainApp(tk.Tk):
             frame.grid_propagate(False)
 
 
-        self.show_frame(StartPage)
+        self.show_frame(StP.StartPage)
 
     def show_frame(self, ctrl):
 
@@ -77,27 +78,9 @@ class MainApp(tk.Tk):
         frame.tkraise()
 
 
-class StartPage(tk.Frame):
-
-    def __init__(self,parent,controller):
-        tk.Frame.__init__(self,parent)
-        tk.Frame.pack(self,fill='both')
-        label = tk.Label(self, text='Welcome to Input Window', font = LARGE_FONT)
-        label.pack(pady=10,padx=10,fill='both')
-
-        s = ttk.Style()
-        s.configure('Front Page Button.TButton', font = NORM_FONT)
-
-        button = ttk.Button(self, text="Med Input",style='Front Page Button.TButton',command=lambda: controller.show_frame(MedP.MedPage1))
-        button.pack(ipady=10,fill ='x')
-        button2 = ttk.Button(self, text="Lab Input",style='Front Page Button.TButton',command=lambda: controller.show_frame(LabP.PageTwo))
-        button2.pack(ipady=10,fill ='x')
-        button3 = ttk.Button(self, text="Provider Input",style='Front Page Button.TButton',command=lambda: controller.show_frame(ProvP.PageThree))
-        button3.pack(ipady=10,fill ='x')
-
 
 
 app = MainApp()
-app.geometry("500x350")
+app.geometry("1240x720")
 app.resizable(width=True, height=True)
 app.mainloop()
