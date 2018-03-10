@@ -55,7 +55,7 @@ class MainApp(tk.Tk):
 
         self.frames = {}
 
-        for F in(StP.StartPage,LabP.LabPage,ProvP.ProviderPage,MedP.MedPage):
+        for F in(StP.StartPage,LabP.LabPage,ProvP.ProviderPage,MedP.MedPage,StP.Input,StP.Search,StP.PlaceHolder):
 
             frame = F(master, self)
 
@@ -79,6 +79,6 @@ class MainApp(tk.Tk):
 
 
 #app = MainApp()
-#app.geometry("940x270")
+#app.geometry("940x720")
 #app.resizable(width=True, height=True)
 #app.mainloop()
