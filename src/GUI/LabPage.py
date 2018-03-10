@@ -47,6 +47,6 @@ class LabPage(tk.Frame):
         button1 = ttk.Button(LabPageFrame, text="Back to Home",command=lambda: controller.show_frame(StP.StartPage))
         button1.grid(row=2,sticky='w')
 
-        SubmitButton = ttk.Button(LabPageFrame,text='Submit',command=lambda:InpCla.submLab(a.entries),
+        SubmitButton = ttk.Button(LabPageFrame,text='Submit',command=lambda:InpCla.submLab(infos.entries,contatos.entries),
          width = 30)
         SubmitButton.grid(row=2,column=0,sticky='e')

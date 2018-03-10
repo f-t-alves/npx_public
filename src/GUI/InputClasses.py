@@ -80,26 +80,26 @@ class InputBoxes(tk.Frame):
 
 LabVarInput = []
 
-def submLab(entries):
-    global LabVarInput
+def submLab(entries,entries2):
+
     Content = []
-    entries = entries
+    entries = entries + entries2
 
     for entry in entries:
         Content.append(entry.get())
-    LabVarInput.append(Content)
+    
     print(Content)
 
 ProvVarInput = []
 
-def submProv(entries):
-    global ProvVarInput
+def submProv(entries,entries2):
+
     Content = []
-    entries = entries
+    entries = entries + entries2
 
     for entry in entries:
         Content.append(entry.get())
-    ProvVarInput.append(Content)
+
     print(Content)
 
 
