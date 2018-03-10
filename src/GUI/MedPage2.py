@@ -12,13 +12,19 @@ SMALL_FONT= ("Verdana", 7)
 
 
 
+
+
+
 class MedPage(tk.Frame):
 
     def __init__(self,parent,controller):
-        tk.Frame.__init__(self,parent,width=300,height=300)
+        tk.Frame.__init__(self,parent,width=300,height=500)
         tk.Frame.grid(self,row=0,column=0)
 
-        n = ttk.Notebook(self)
+        style=ttk.Style()
+        a = style.element_names()
+        print(a)
+        n = ttk.Notebook(self,width= 690, height=170)
         n.grid()
         f1 = ttk.Frame(n)   # first page, which would get widgets gridded into it
         f1.grid()
@@ -60,24 +66,49 @@ class MedPage(tk.Frame):
         d = InpCla.InputBoxes(Product4,1,4,f2)
         e = InpCla.InputBoxes(Product5,1,4,f2)
         f = InpCla.InputBoxes(Product6,1,1,f2)
-        d.grid(row=1,column=0,columnspan=1,sticky='e',padx=0)
-        e.grid(row=1,column=1,columnspan=1,sticky='w',padx=0)
-        f.grid(row=2,column=0,columnspan=1,sticky='e',padx=0)
+        d.grid(row=1,column=1,columnspan=1,sticky='e',padx=0)
+        e.grid(row=1,column=2,columnspan=1,sticky='w',padx=0)
+        f.grid(row=2,column=1,columnspan=1,sticky='ne',padx=0)
+
+        listtrib = ttk.Combobox(f1)
+        listtrib['values'] = ['Positiva', 'Neutra', 'Negativa']
+        listtrib.grid(row=2,column=1,sticky='n',pady = 15)
+
+        prodtype = ttk.Combobox(f1)
+        prodtype['values'] = ['Biológico', 'Referência', 'Similar','Genérico']
+        prodtype.grid(row=2,column=3,sticky='n',pady = 15)
+
+        checkbox_frame = ttk.Frame(f1)
+        checkbox_frame.grid(row=1, column=3,sticky='e')
+
+        self.RestHosp = tk.IntVar()
+        check1 = ttk.Checkbutton(checkbox_frame, text='RestHosp',variable = self.RestHosp, onvalue = 1, offvalue = 0 )
+        check1.grid(row=0,column=3,sticky='w')
+        self.CAP = tk.IntVar()
+        check2 = ttk.Checkbutton(checkbox_frame, text='CAP',variable = self.CAP, onvalue = 1, offvalue = 0 )
+        check2.grid(row=1,column=3,sticky='w')
+        self.AnalRecur = tk.IntVar()
+        check3 = ttk.Checkbutton(checkbox_frame, text='AnalRecur',variable = self.AnalRecur, onvalue = 1, offvalue = 0 )
+        check3.grid(row=2,column=3,sticky='w')
+        self.Comerc2016 = tk.IntVar()
+        check4 = ttk.Checkbutton(checkbox_frame, text='Comerc2016',variable = self.Comerc2016, onvalue = 1, offvalue = 0 )
+        check4.grid(row=3,column=3,sticky='w')
+        f1.grid_rowconfigure(2,weight=1)
+        f1.grid_columnconfigure(0, weight=0)
 
         Product7 = ['ProdName','PrinAtivo','Description','TeraClassID','ProdType']
-        Product8 = ['RestHosp','CAP','CONFAZ87','AnalRecur','ListaTribID',
-        'Comerc2016','Tarja']
+        Product8 = ['CONFAZ87','Tarja']
         Product9 = ['EAN','LabID','CodGGREM','Registro']
 
         #'Float' = 1 ou 'Int' = 2 ou 'Str' = 3
 
         g = InpCla.InputBoxes(Product7,3,4,f1)
-        h = InpCla.InputBoxes(Product8,2,7,f1)
+        h = InpCla.InputBoxes(Product8,2,2,f1)
         i = InpCla.InputBoxes(Product9,2,4,f1)
 
-        g.grid(row=1,column=1,sticky='w')
-        h.grid(row=1,column=2,rowspan=2,sticky='w')
-        i.grid(row=2,column=1,sticky='w')
+        g.grid(row=1,column=0,sticky='nw')
+        h.grid(row=2,column=0,rowspan=2,sticky='nw')
+        i.grid(row=1,column=1,sticky='nw')
         c.grid_rowconfigure(1, weight=4)
 
 
@@ -88,3 +119,6 @@ class MedPage(tk.Frame):
         b2.grid(row=2,column=0,sticky = 'ne')
         # b3 = ttk.Button(self, text = '3',command =lambda: raise_1(self,Frame3))
         # b3.grid(row=2,column=0,sticky = 'nw')
+
+
+        # Popup para busca: LabID, PrinAtivo

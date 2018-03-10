@@ -3,6 +3,7 @@ import tkinter as tk
 from tkinter import ttk
 from src.GUI import LabPage as LabP
 from src.GUI import MedPage as MedP
+from src.GUI import MedPage2 as MedP2
 from src.GUI import ProviderPage as ProvP
 from src.GUI import StartPage as StP
 from src.GUI import InputClasses as InpCla
@@ -55,7 +56,7 @@ class MainApp(tk.Tk):
 
         self.frames = {}
 
-        for F in(StP.StartPage,LabP.LabPage,ProvP.ProviderPage,MedP.MedPage):
+        for F in(StP.StartPage,LabP.LabPage,ProvP.ProviderPage,MedP.MedPage,MedP2.MedPage):
 
             frame = F(master, self)
 
