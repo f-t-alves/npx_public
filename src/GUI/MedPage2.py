@@ -19,22 +19,25 @@ class MedPage(tk.Frame):
 
     def __init__(self,parent,controller):
         tk.Frame.__init__(self,parent,width=300,height=500)
-        tk.Frame.grid(self,row=0,column=0)
 
-        style=ttk.Style()
-        a = style.element_names()
-        print(a)
-        n = ttk.Notebook(self,width= 690, height=170)
-        n.grid()
-        f1 = ttk.Frame(n)   # first page, which would get widgets gridded into it
+        # style=ttk.Style()
+        # a = style.element_names()
+        # print(a)
+
+        PageFrame = ttk.Frame(self)
+        PageFrame.grid(padx=35,pady=10)
+
+        note = ttk.Notebook(PageFrame,width= 690, height=170)
+        note.grid()
+        f1 = ttk.Frame(note)   # first page, which would get widgets gridded into it
         f1.grid()
-        f2 = ttk.Frame(n)   # second page
+        f2 = ttk.Frame(note)   # second page
         f2.grid()
-        f3 = ttk.Frame(n)   # second page
+        f3 = ttk.Frame(note)   # second page
         f3.grid()
-        n.add(f1, text='Infos')
-        n.add(f2, text='PF')
-        n.add(f3, text='PMC')
+        note.add(f1, text='Infos')
+        note.add(f2, text='PF')
+        note.add(f3, text='PMC')
         label1 =tk.Label(f1,text=' ')
         label1.grid(row=0,column=2,sticky = 'nwse')
         label2 =tk.Label(f2,text=' ')
@@ -113,9 +116,10 @@ class MedPage(tk.Frame):
 
 
 
-        b1 = ttk.Button(self, text="Back to Home",command=lambda: controller.show_frame(StP.StartPage))
+        b1 = ttk.Button(PageFrame, text="Back to Home",command=lambda: controller.show_frame(StP.StartPage))
         b1.grid(row=2,column=0,sticky = 'nw')
-        b2 = ttk.Button(self, text = 'Submit',command =lambda: InpCla.submMedToT(a.entries,b.entries,c.entries,d.entries,e.entries,f.entries,g.entries,h.entries,i.entries),width = 30)
+        b2 = ttk.Button(PageFrame, text = 'Submit',command =lambda: InpCla.submMedToT(a.entries,b.entries,c.entries,
+        d.entries,e.entries,f.entries,g.entries,h.entries,i.entries,self.RestHosp,self.CAP,self.AnalRecur,self.Comerc2016,prodtype,listtrib),width = 30)
         b2.grid(row=2,column=0,sticky = 'ne')
         # b3 = ttk.Button(self, text = '3',command =lambda: raise_1(self,Frame3))
         # b3.grid(row=2,column=0,sticky = 'nw')

@@ -106,13 +106,27 @@ def submProv(entries):
 
 
 
-def submMedToT(entries1,entries2,entries3,entries4,entries5,entries6,entries7,entries8,entries9):
+def submMedToT(entries1,entries2,entries3,entries4,entries5,entries6,entries7,
+entries8,entries9,check1,check2,check3,check4,prodtype,listtrib):
 
     Content1 = []
     entries = entries1 + entries2 + entries3 + entries4 + entries5 + entries6 + entries7 + entries8 + entries9
+    check1=check1
+    check2=check2
+    check3=check3
+    check4=check4
+    prodtype=prodtype
+    listtrib=listtrib
 
     for entry in entries:
         Content1.append(entry.get())
+
+    Content1.append(check1.get())
+    Content1.append(check2.get())
+    Content1.append(check3.get())
+    Content1.append(check4.get())
+    Content1.append(prodtype.get())
+    Content1.append(listtrib.get())
 
     print(Content1)
 
