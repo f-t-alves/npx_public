@@ -1,12 +1,11 @@
 
 import tkinter as tk
 from tkinter import ttk
-import LabPage as LabP
-import MedPage as MedP
-import ProviderPage as ProvP
-import StartPage as StP
-import InputClasses as InpCla
-import NewMedPage as NMP
+from src.GUI import LabPage as LabP
+from src.GUI import MedPage as MedP
+from src.GUI import ProviderPage as ProvP
+from src.GUI import StartPage as StP
+from src.GUI import InputClasses as InpCla
 
 LARGE_FONT= ("Verdana", 12)
 NORM_FONT= ("Verdana", 10)
@@ -37,7 +36,7 @@ class MainApp(tk.Tk):
         tk.Tk.__init__(self, *args, **kwargs)
 
         tk.Tk.title(self,'New Pharma eXperience')
-        tk.Tk.iconbitmap(self, default='clinic.ico')
+        tk.Tk.iconbitmap(self, default='src/GUI/clinic.ico')
 
         master = tk.Frame(self)
         master.pack(expand=1)
@@ -56,7 +55,7 @@ class MainApp(tk.Tk):
 
         self.frames = {}
 
-        for F in(StP.StartPage,MedP.MedPage1,MedP.MedPage2,MedP.MedPage3,LabP.PageTwo,ProvP.PageThree,NMP.MedPage):
+        for F in(StP.StartPage,LabP.LabPage,ProvP.ProviderPage,MedP.MedPage):
 
             frame = F(master, self)
 
@@ -65,7 +64,7 @@ class MainApp(tk.Tk):
             frame.grid(row=5,column=5,columnspan=1,rowspan=1,sticky='NSEW')
             frame.grid_rowconfigure(0,weight=0)
             frame.grid_columnconfigure(0,weight=0)
-            frame.grid_propagate(False)
+            frame.grid_propagate(True)
 
 
         self.show_frame(StP.StartPage)
@@ -79,7 +78,7 @@ class MainApp(tk.Tk):
 
 
 
-app = MainApp()
-app.geometry("940x270")
-app.resizable(width=True, height=True)
-app.mainloop()
+#app = MainApp()
+#app.geometry("940x270")
+#app.resizable(width=True, height=True)
+#app.mainloop()

@@ -1,8 +1,7 @@
-
 import tkinter as tk
 from tkinter import ttk
-import InputClasses as InpCla
-import StartPage as StP
+from src.GUI import InputClasses as InpCla
+from src.GUI import StartPage as StP
 
 LARGE_FONT= ("Verdana", 12)
 NORM_FONT= ("Verdana", 10)
@@ -10,7 +9,7 @@ SMALL_FONT= ("Verdana", 7)
 
 
 
-class PageTwo(tk.Frame):
+class LabPage(tk.Frame):
 
     def __init__(self,parent,controller):
         tk.Frame.__init__(self,parent)

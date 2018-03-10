@@ -1,8 +1,8 @@
 
 import tkinter as tk
 from tkinter import ttk
-import InputClasses as InpCla
-import StartPage as StP
+from src.GUI import InputClasses as InpCla
+from src.GUI import StartPage as StP
 # import MainApp as MP
 
 LARGE_FONT= ("Verdana", 12)
