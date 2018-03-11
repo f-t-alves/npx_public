@@ -6,6 +6,7 @@ from src.GUI import MedPage2 as MedP
 from src.GUI import ProviderPage as ProvP
 from src.GUI import StartPage as StP
 from src.GUI import InputClasses as InpCla
+from src.GUI import MedSearchPage as MSP
 
 LARGE_FONT= ("Verdana", 12)
 NORM_FONT= ("Verdana", 10)
@@ -38,7 +39,7 @@ class MainApp(tk.Tk):
         tk.Tk.title(self,'New Pharma eXperience')
         tk.Tk.iconbitmap(self, default='src/GUI/clinic.ico')
 
-        master = tk.Frame(self)
+        master = tk.Frame(self,width=940)
         master.pack(expand=1)
 
         menubar = tk.Menu(master)
@@ -55,7 +56,7 @@ class MainApp(tk.Tk):
 
         self.frames = {}
 
-        for F in(StP.StartPage,LabP.LabPage,ProvP.ProviderPage,MedP.MedPage,StP.Input,StP.Search,StP.PlaceHolder):
+        for F in(StP.StartPage,LabP.LabPage,ProvP.ProviderPage,MedP.MedPage,StP.Input,StP.Search,StP.PlaceHolder,MSP.SearchMedPage):
 
             frame = F(master, self)
 

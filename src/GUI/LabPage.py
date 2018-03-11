@@ -12,9 +12,9 @@ SMALL_FONT= ("Verdana", 7)
 class LabPage(tk.Frame):
 
     def __init__(self,parent,controller):
-        tk.Frame.__init__(self,parent)
+        tk.Frame.__init__(self,parent,width=940)
 
-        LabPageFrame = ttk.Frame(self,width= 340, height=123)
+        LabPageFrame = ttk.Frame(self,width= 940, height=123)
         LabPageFrame.grid(row=0,padx=220)
 
         label = ttk.Label(LabPageFrame, text='Laboratories', font = LARGE_FONT)

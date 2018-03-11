@@ -16,9 +16,9 @@ SMALL_FONT= ("Verdana", 7)
 class ProviderPage(tk.Frame):
 
     def __init__(self,parent,controller):
-        tk.Frame.__init__(self,parent)
+        tk.Frame.__init__(self,parent,width=940)
 
-        PageFrame = ttk.Frame(self,width= 340, height=123)
+        PageFrame = ttk.Frame(self,width= 940, height=123)
         PageFrame.grid(row=0,padx=220)
 
         label = tk.Label(PageFrame, text='Provider Company', font = LARGE_FONT)

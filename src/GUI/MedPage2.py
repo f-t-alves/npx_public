@@ -18,13 +18,13 @@ SMALL_FONT= ("Verdana", 7)
 class MedPage(tk.Frame):
 
     def __init__(self,parent,controller):
-        tk.Frame.__init__(self,parent,width=300,height=500)
+        tk.Frame.__init__(self,parent,width=940)
 
         # style=ttk.Style()
         # a = style.element_names()
         # print(a)
 
-        PageFrame = ttk.Frame(self)
+        PageFrame = ttk.Frame(self,width=940)
         PageFrame.grid(padx=35,pady=10)
 
         note = ttk.Notebook(PageFrame,width= 690, height=170)

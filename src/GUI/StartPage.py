@@ -4,6 +4,7 @@ from tkinter import ttk
 from src.GUI import LabPage as LabP
 from src.GUI import ProviderPage as ProvP
 from src.GUI import MedPage2 as MedP
+from src.GUI import MedSearchPage as MSP
 
 
 LARGE_FONT= ("Verdana", 12)
@@ -14,9 +15,9 @@ SMALL_FONT= ("Verdana", 7)
 class StartPage(tk.Frame):
 
     def __init__(self,parent,controller):
-        tk.Frame.__init__(self,parent)
+        tk.Frame.__init__(self,parent,width=940)
 
-        PageFrame=ttk.Frame(self)
+        PageFrame=ttk.Frame(self,width=940)
         PageFrame.grid(ipady=300)
 
         label = tk.Label(PageFrame, text='Welcome to NPX', font = LARGE_FONT)
@@ -46,9 +47,9 @@ class StartPage(tk.Frame):
 class Input(tk.Frame):
 
     def __init__(self,parent,controller):
-        tk.Frame.__init__(self,parent)
+        tk.Frame.__init__(self,parent,width=940)
 
-        PageFrame=ttk.Frame(self)
+        PageFrame=ttk.Frame(self,width=940)
         PageFrame.grid(padx=300)
 
         label = tk.Label(PageFrame, text='Input Page', font = LARGE_FONT)
@@ -64,15 +65,15 @@ class Input(tk.Frame):
         button3 = ttk.Button(PageFrame, text="Provider Input",style='Front Page Button.TButton',command=lambda: controller.show_frame(ProvP.ProviderPage),width=30)
         button3.grid(ipady=10)
         button4 = ttk.Button(PageFrame, text="Back Home",style='Front Page Button.TButton',command=lambda: controller.show_frame(StartPage))
-        button4.grid()
+        button4.grid(pady=10)
 
 
 class Search(tk.Frame):
 
     def __init__(self,parent,controller):
-        tk.Frame.__init__(self,parent)
+        tk.Frame.__init__(self,parent,width=940)
 
-        PageFrame=ttk.Frame(self)
+        PageFrame=ttk.Frame(self,width=940)
         PageFrame.grid(padx=300)
 
         label = tk.Label(PageFrame, text='Search Page', font = LARGE_FONT)
@@ -81,14 +82,14 @@ class Search(tk.Frame):
         s = ttk.Style()
         s.configure('Front Page Button.TButton', font = NORM_FONT)
 
-        button = ttk.Button(PageFrame, text="Med Search",style='Front Page Button.TButton',command=lambda: controller.show_frame(MedP.MedPage),width=30)
+        button = ttk.Button(PageFrame, text="Med Search",style='Front Page Button.TButton',command=lambda: controller.show_frame(MSP.SearchMedPage),width=30)
         button.grid(ipady=10)
-        button2 = ttk.Button(PageFrame, text="Lab Search",style='Front Page Button.TButton',command=lambda: controller.show_frame(LabP.LabPage),width=30)
+        button2 = ttk.Button(PageFrame, text="Lab Search",style='Front Page Button.TButton',command=lambda: controller.show_frame(PlaceHolder),width=30)
         button2.grid(ipady=10)
-        button3 = ttk.Button(PageFrame, text="Provider Search",style='Front Page Button.TButton',command=lambda: controller.show_frame(ProvP.ProviderPage),width=30)
+        button3 = ttk.Button(PageFrame, text="Provider Search",style='Front Page Button.TButton',command=lambda: controller.show_frame(PlaceHolder),width=30)
         button3.grid(ipady=10)
         button4 = ttk.Button(PageFrame, text="Back Home",style='Front Page Button.TButton',command=lambda: controller.show_frame(StartPage))
-        button4.grid()
+        button4.grid(pady=10)
 
 
 class PlaceHolder(tk.Frame):
@@ -103,4 +104,4 @@ class PlaceHolder(tk.Frame):
         label.grid(pady=10,padx=10)
 
         button = ttk.Button(PageFrame, text="Back Home",style='Front Page Button.TButton',command=lambda: controller.show_frame(StartPage))
-        button.grid()
+        button.grid(pady=10)
