@@ -21,8 +21,9 @@ class SearchMedPage(tk.Frame):
         # a = style.element_names()
         # print(a)
 
-        PageFrame = ttk.Frame(self,width=940)
-        PageFrame.grid(padx=250,pady=10)
+        PageFrame = ttk.Frame(self,width=940,relief='solid')
+        PageFrame.grid(column=1,padx=250,pady=10)
+        PageFrame.grid_propagate(True)
 
 
         Product = ['EAN','ProdID']

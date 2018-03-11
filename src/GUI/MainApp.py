@@ -56,7 +56,7 @@ class MainApp(tk.Tk):
 
         self.frames = {}
 
-        for F in(StP.StartPage,LabP.LabPage,ProvP.ProviderPage,MedP.MedPage,StP.Input,StP.Search,StP.PlaceHolder,MSP.SearchMedPage):
+        for F in(StP.StartPage,LabP.LabPage,ProvP.ProviderPage,MedP.MedPage,StP.Input,StP.Search,StP.PlaceHolder,MSP.SearchMedPage,StP.ImportNFe):
 
             frame = F(master, self)
 
@@ -65,7 +65,7 @@ class MainApp(tk.Tk):
             frame.grid(row=5,column=5,columnspan=1,rowspan=1,sticky='NSEW')
             frame.grid_rowconfigure(0,weight=0)
             frame.grid_columnconfigure(0,weight=0)
-            frame.grid_propagate(True)
+
 
 
         self.show_frame(StP.StartPage)
