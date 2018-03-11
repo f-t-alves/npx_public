@@ -22,7 +22,7 @@ def popupmsg(msg):
     label.pack(side='top', fill='x', pady=10,anchor='center')
     B1 = ttk.Button(popup, text='Ok',command=popup.destroy)
     B1.pack()
-    popup.geometry("200x80")
+    popup.geometry("300x80")
     popup.resizable(width=False, height=False)
     popup.mainloop()
 

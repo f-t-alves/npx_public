@@ -1,4 +1,5 @@
 import traceback
+from src.GUI import MainApp as MaP
 
 def inputNFe2DB(inDict,db):
     cursor = db.cursor()
@@ -8,7 +9,10 @@ def inputNFe2DB(inDict,db):
     flagDupe = checkDuplicateNFe(NFeID,cursor)
 
     if flagDupe==True:
-        print('Duplicate NFe, operation cancelled')
+
+	    msg = str('Duplicate NFe, operation cancelled')
+	    MaP.popupmsg(msg)
+
     else:
         writeNFe2DB(prepDict,db)
 

@@ -16,6 +16,6 @@ NFeDict = readNFe(filename)
 inputNFe2DB(NFeDict,db)
 
 app = MaP.MainApp()
-app.geometry("940x270")
+app.geometry("940x720")
 app.resizable(width=True, height=True)
 app.mainloop()
