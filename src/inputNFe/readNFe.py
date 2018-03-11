@@ -10,6 +10,9 @@ def readNFe(filename):
     readDict = {}
 
     prodEAN = []
+    prodLot = []
+    prodFabDate = []
+    prodExpDate = []
     prodQuantity = []
 
     for prot in xml_root.iter('infProt'):
@@ -17,12 +20,20 @@ def readNFe(filename):
 
     for product in xml_root.iter('prod'):
         prodEAN.append(int(product.find('cEAN').text))
-        prodQuantity.append(int(float(product.find('qCom').text)))
+
+        med = product.find('med')
+        prodLot.append(med.find('nLote').text)
+        prodFabDate.append(med.find('dFab').text)
+        prodExpDate.append(med.find('dVal').text)
+        prodQuantity.append(int(float(med.find('qLote').text)))
 
     fileclean.close()
 
     readDict['NFeID'] = NFeID
     readDict['prodEAN'] = prodEAN
+    readDict['prodLot'] = prodLot
+    readDict['prodFabDate'] = prodFabDate
+    readDict['prodExpDate'] = prodExpDate
     readDict['prodQuantity'] = prodQuantity
     readDict['NFeFile'] = cleanDict['filein']
 
