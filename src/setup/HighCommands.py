@@ -79,7 +79,25 @@ def populateDB(db):
         traceback.print_exc()
 
     try:
-        dataFrame = populateProduct(cursor) #Test-only, add tributary info later
+        dataFrame = populateLabs(cursor) #Test-only, add tributary info later
+        db.commit()
+        print('Laboratory table populated')
+    except Exception as e:
+        db.rollback()
+        print('Laboratory populate failed')
+        traceback.print_exc()
+
+    try:
+        dataFrame = populateTeraClass(cursor) #Test-only, add tributary info later
+        db.commit()
+        print('TeraClass table populated')
+    except Exception as e:
+        db.rollback()
+        print('TeraClass populate failed')
+        traceback.print_exc()
+
+    try:
+        dataFrame = populateProducts(cursor) #Test-only, add tributary info later
         db.commit()
         print('Product table populated')
         return dataFrame

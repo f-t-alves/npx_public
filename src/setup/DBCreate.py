@@ -8,17 +8,17 @@ def createProductTable(cursor):
        CodGGREM INTEGER NOT NULL,
        Registro INTEGER NOT NULL,
        ProdDescription TEXT NOT NULL,
-       TeraClassID TEXT NOT NULL,
+       TeraClassID INTEGER NOT NULL,
        ProdType TEXT NOT NULL,
-       PF0p REAL NOT NULL,
-       PF12p REAL NOT NULL,
-       PF17p REAL NOT NULL,
-       PF17p_ALC REAL NOT NULL,
-       PF17p5 REAL NOT NULL,
-       PF17p5_ALC REAL NOT NULL,
-       PF18p REAL NOT NULL,
-       PF18p_ALC REAL NOT NULL,
-       PF20p REAL NOT NULL,
+       PF0p TEXT,
+       PF12p REAL,
+       PF17p REAL,
+       PF17p_ALC REAL,
+       PF17p5 REAL,
+       PF17p5_ALC REAL,
+       PF18p REAL,
+       PF18p_ALC REAL,
+       PF20p REAL,
        PMC0p REAL,
        PMC12p REAL,
        PMC17p REAL,
@@ -33,10 +33,10 @@ def createProductTable(cursor):
        CONFAZ87 INTEGER NOT NULL,
        AnalRecur INTEGER,
        ListaTribID INTEGER NOT NULL,
-       Comerc2016 INTEGER NOT NULL,
-       Tarja INTEGER NOT NULL,
+       Comerc2016 INTEGER,
+       Tarja TEXT NOT NULL,
        FOREIGN KEY (LabID) REFERENCES Laboratories(LabID),
-       FOREIGN KEY (TeraClassID) REFERENCES TerapeuticClass(TeraClassID),
+       FOREIGN KEY (TeraClassID) REFERENCES TerapeuticClass(TeraClassRowID),
        FOREIGN KEY (ListaTribID) REFERENCES ListaTributaria(ListaTribID)
     )''')
 
@@ -71,15 +71,17 @@ def createProviderTable(cursor):
 def createTerapeuticClassTable(cursor):
     cursor.execute('''
     CREATE TABLE IF NOT EXISTS TerapeuticClass(
-       TeraClassID INTEGER PRIMARY KEY NOT NULL,
-       Description TEXT NOT NULL
+       TeraClassRowID INTEGER PRIMARY KEY NOT NULL,
+       TeraClassID TEXT UNIQUE,
+       TeraClassDescription TEXT,
+       TeraClassFull TEXT NOT NULL
     )''')
 
 def createListaTributaria(cursor):
     cursor.execute('''
     CREATE TABLE IF NOT EXISTS ListaTributaria(
        ListaTribID INTEGER PRIMARY KEY NOT NULL,
-       ClassDescription TEXT NOT NULL
+       ListDescription TEXT NOT NULL
     )''')
 
 def createStockTable(cursor):
