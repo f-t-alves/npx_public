@@ -8,7 +8,7 @@ def createProductTable(cursor):
        CodGGREM INTEGER NOT NULL,
        Registro INTEGER NOT NULL,
        ProdDescription TEXT NOT NULL,
-       TeraClassID INTEGER NOT NULL,
+       TeraClassID INTEGER,
        ProdType TEXT NOT NULL,
        PF0p TEXT,
        PF12p REAL,
@@ -74,7 +74,7 @@ def createTerapeuticClassTable(cursor):
        TeraClassRowID INTEGER PRIMARY KEY NOT NULL,
        TeraClassID TEXT UNIQUE,
        TeraClassDescription TEXT,
-       TeraClassFull TEXT NOT NULL
+       TeraClassFull TEXT
     )''')
 
 def createListaTributaria(cursor):

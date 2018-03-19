@@ -15,7 +15,7 @@ def readProducts(filename):
 def populateProducts(cursor):
     pop = []
 
-    filename = 'data/test_products.csv'
+    filename = 'data/test_products_nodupes.csv'
     productsDF = readProducts(filename)
     productsDF = replaceProductsCols(productsDF,cursor)
 
