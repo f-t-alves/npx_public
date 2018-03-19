@@ -9,6 +9,7 @@ from src.GUI import MainApp as MaP
 os.makedirs('data',exist_ok=True)
 db = sqlite3.connect('data/testdb.db')
 createDB(db)
+df = populateDB(db)
 
 filename = 'data/xml_test.xml'
 NFeDict = readNFe(filename)

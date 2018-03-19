@@ -1,4 +1,5 @@
 from src.setup.DBCreate import *
+from src.setup.DBPopulate import *
 import traceback
 
 def createDB(db):
@@ -66,6 +67,8 @@ def createDB(db):
         print('NFe table failed')
         traceback.print_exc()
 
+def populateDB(db):
+    cursor = db.cursor()
     try:
         populateListaTributaria(cursor) #Test-only, add tributary info later
         db.commit()
@@ -73,4 +76,32 @@ def createDB(db):
     except Exception as e:
         db.rollback()
         print('ListaTributaria populate failed')
+        traceback.print_exc()
+
+    try:
+        dataFrame = populateLabs(cursor) #Test-only, add tributary info later
+        db.commit()
+        print('Laboratory table populated')
+    except Exception as e:
+        db.rollback()
+        print('Laboratory populate failed')
+        traceback.print_exc()
+
+    try:
+        dataFrame = populateTeraClass(cursor) #Test-only, add tributary info later
+        db.commit()
+        print('TeraClass table populated')
+    except Exception as e:
+        db.rollback()
+        print('TeraClass populate failed')
+        traceback.print_exc()
+
+    try:
+        dataFrame = populateProducts(cursor) #Test-only, add tributary info later
+        db.commit()
+        print('Product table populated')
+        return dataFrame
+    except Exception as e:
+        db.rollback()
+        print('Product populate failed')
         traceback.print_exc()
