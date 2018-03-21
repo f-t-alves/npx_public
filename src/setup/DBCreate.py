@@ -1,110 +1,31 @@
-def createProductTable(cursor):
-    cursor.execute('''
-    CREATE TABLE IF NOT EXISTS Products(
-       EAN INTEGER PRIMARY KEY NOT NULL,
-       ProdName TEXT NOT NULL,
-       LabID INTEGER NOT NULL,
-       PrinAtivo TEXT NOT NULL,
-       CodGGREM INTEGER NOT NULL,
-       Registro INTEGER NOT NULL,
-       ProdDescription TEXT NOT NULL,
-       TeraClassID INTEGER,
-       ProdType TEXT NOT NULL,
-       PF0p TEXT,
-       PF12p REAL,
-       PF17p REAL,
-       PF17p_ALC REAL,
-       PF17p5 REAL,
-       PF17p5_ALC REAL,
-       PF18p REAL,
-       PF18p_ALC REAL,
-       PF20p REAL,
-       PMC0p REAL,
-       PMC12p REAL,
-       PMC17p REAL,
-       PMC17p_ALC REAL,
-       PMC17p5 REAL,
-       PMC17p5_ALC REAL,
-       PMC18p REAL,
-       PMC18p_ALC REAL,
-       PMC20p REAL,
-       RestHosp INTEGER NOT NULL,
-       CAP INTEGER NOT NULL,
-       CONFAZ87 INTEGER NOT NULL,
-       AnalRecur INTEGER,
-       ListaTribID INTEGER NOT NULL,
-       Comerc2016 INTEGER,
-       Tarja TEXT NOT NULL,
-       FOREIGN KEY (LabID) REFERENCES Laboratories(LabID),
-       FOREIGN KEY (TeraClassID) REFERENCES TerapeuticClass(TeraClassRowID),
-       FOREIGN KEY (ListaTribID) REFERENCES ListaTributaria(ListaTribID)
-    )''')
+def createTableCommand(tableObj):
+    createCommand = '''CREATE TABLE IF NOT EXISTS'''
 
-def createLaboratoryTable(cursor):
-    cursor.execute('''
-    CREATE TABLE IF NOT EXISTS Laboratories(
-       LabID INTEGER PRIMARY KEY NOT NULL,
-       LabName TEXT NOT NULL,
-       LabCNPJ TEXT NOT NULL,
-       LabOfficeAddress TEXT,
-       LabContactEmail1 TEXT,
-       LabContactEmail2 TEXT,
-       LabContactPhone1 TEXT,
-       LabContactPhone2 TEXT,
-       LabContactFax TEXT
-    )''')
+    tableName = tableObj.name
+    createCommand = createCommand + ''' ''' + tableName + '''('''
 
-def createProviderTable(cursor):
-    cursor.execute('''
-    CREATE TABLE IF NOT EXISTS ProviderCompany(
-       ProvCompID INTEGER PRIMARY KEY NOT NULL,
-       ProvCompName TEXT NOT NULL,
-       ProvCompCNPJ TEXT NOT NULL,
-       ProvOfficeAddress TEXT,
-       ProvContactEmail1 TEXT,
-       ProvContactEmail2 TEXT,
-       ProvContactPhone1 TEXT,
-       ProvContactPhone2 TEXT,
-       ProvContactFax TEXT
-    )''')
+    fieldName = list(tableObj.fields.keys())
+    fLen = len(fieldName)
+    for i in range(fLen):
+        fName = fieldName[i]
+        line = ''' '''
+        line = line + fName + ''' '''
+        line = line + tableObj.fields[fName]
+        if i != fLen-1:
+            line = line + ''','''
+        createCommand = createCommand + line
 
-def createTerapeuticClassTable(cursor):
-    cursor.execute('''
-    CREATE TABLE IF NOT EXISTS TerapeuticClass(
-       TeraClassRowID INTEGER PRIMARY KEY NOT NULL,
-       TeraClassID TEXT UNIQUE,
-       TeraClassDescription TEXT,
-       TeraClassFull TEXT
-    )''')
+    foreignTables = list(tableObj.foreignkeys.keys())
+    ftLen = len(foreignTables)
+    for i in range(ftLen):
+        line = ''', '''
+        ftName = foreignTables[i]
+        fkName = tableObj.foreignkeys[ftName]
+        line = line + '''FOREIGN KEY (''' + fkName + ''')'''
+        line = line + ''' REFERENCES ''' + ftName + '''(''' + fkName + ''')'''
+        createCommand = createCommand + line
 
-def createListaTributaria(cursor):
-    cursor.execute('''
-    CREATE TABLE IF NOT EXISTS ListaTributaria(
-       ListaTribID INTEGER PRIMARY KEY NOT NULL,
-       ListDescription TEXT NOT NULL
-    )''')
+    createCommand = createCommand + ''')'''
 
-def createStockTable(cursor):
-    cursor.execute('''
-    CREATE TABLE IF NOT EXISTS Stock(
-       StockID INTEGER PRIMARY KEY NOT NULL,
-       EAN INTEGER NOT NULL,
-       LotNumber TEXT,
-       Quantity INTEGER NOT NULL,
-       Location1 TEXT,
-       Location2 TEXT,
-       ManufactureDate TEXT,
-       ExpireDate TEXT,
-       FOREIGN KEY (EAN) REFERENCES Products(EAN)
-    )''')
-
-def createNFeTable(cursor):
-    cursor.execute('''
-    CREATE TABLE IF NOT EXISTS NFeControl(
-       NFeID TEXT PRIMARY KEY NOT NULL,
-       EmissionDate TEXT,
-       DueDate TEXT,
-       DueTotal REAL,
-       TaxTotal REAL,
-       XMLFile TEXT NOT NULL
-    )''')
+    #print(createCommand)
+    return createCommand

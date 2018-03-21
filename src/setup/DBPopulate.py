@@ -1,5 +1,6 @@
 import pandas as pd
 from src.setup import setup_utilities as utils
+from  src.setup import SQLTables as tb
 
 ################################################################
 
@@ -26,7 +27,7 @@ def populateProducts(cursor):
         rowBuffer = row[1].tolist()
         pop.append(tuple(rowBuffer))
 
-    utils.insertTable('Products',headers,pop,cursor)
+    utils.insertTable(tb.prodsTable.name,headers,pop,cursor)
 
     #cursor.executemany('''INSERT INTO Products VALUES(?,?)''', pop) #falta filtrar os dados e converter as foreign keys
     return productsDF #TEST
@@ -36,13 +37,13 @@ def replaceProductsCols(productsDF,cursor):
     debugDict = {}
 
     headers = ['LabID', 'LabName']
-    labDict = utils.selectTable('Laboratories',headers,cursor)
+    labDict = utils.selectTable(tb.labsTable.name,headers,cursor)
 
     headers = ['TeraClassID', 'TeraClassFull']
-    teraDict = utils.selectTable('TerapeuticClass',headers,cursor)
+    teraDict = utils.selectTable(tb.teraClassTable.name,headers,cursor)
 
     headers = ['ListaTribID', 'ListDescription']
-    listDict = utils.selectTable('ListaTributaria',headers,cursor)
+    listDict = utils.selectTable(tb.listTribTable.name,headers,cursor)
 
     productsDF.LabID = productsDF.LabID.replace(to_replace=labDict['LabName'],value=labDict['LabID'])
     productsDF.TeraClassID = productsDF.TeraClassID.replace(to_replace=teraDict['TeraClassFull'],value=teraDict['TeraClassID'])
@@ -82,7 +83,7 @@ def populateLabs(cursor):
         rowBuffer = row[1].tolist()
         pop.append(tuple(rowBuffer))
 
-    utils.insertTable('Laboratories',headers,pop,cursor)
+    utils.insertTable(tb.labsTable.name,headers,pop,cursor)
 
     return labsDF #pop #TEST
 
@@ -108,7 +109,7 @@ def populateTeraClass(cursor):
         rowBuffer = row[1].tolist()
         pop.append(tuple(rowBuffer))
 
-    utils.insertTable('TerapeuticClass',headers,pop,cursor)
+    utils.insertTable(tb.teraClassTable.name,headers,pop,cursor)
 
     return teraDF #pop #TEST
 
@@ -120,4 +121,4 @@ def populateListaTributaria(cursor):
     pop = [(1,'POSITIVA'),
            (2,'NEUTRA'),
            (3,'NEGATIVA')]
-    utils.insertTable('ListaTributaria',headers,pop,cursor)
+    utils.insertTable(tb.listTribTable.name,headers,pop,cursor)
