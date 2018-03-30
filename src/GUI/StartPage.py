@@ -1,12 +1,16 @@
 
+import sqlite3
+
 import tkinter as tk
 from tkinter import ttk
 from src.GUI import LabPage as LabP
 from src.GUI import ProviderPage as ProvP
 from src.GUI import MedPage2 as MedP
 from src.GUI import MedSearchPage as MSP
+from src.GUI import MainApp as MaP
 from tkinter import filedialog as fd
 from src.inputNFe import readNFe as rNFe
+from src.inputNFe import inputNFe2DB as iNFe
 
 LARGE_FONT= ("Verdana", 12)
 NORM_FONT= ("Verdana", 10)
@@ -129,24 +133,58 @@ class ImportNFe(tk.Frame):
         entr1 = tk.Entry(PageFrame)
         entr1.grid(row=1,column=1,ipadx=130,padx=10,ipady=2)
 
-        def filename():
+        def getFilename():
 
             filename =  fd.askopenfilename(initialdir = "C:/Users/%s",title = "Select XML",filetypes = (("XML Files","*.xml"),("all files","*.*")))
             entr1.insert(0,filename)
 
-            return(filename)
+            #return(filename)
 
-        def submit():
+        def submitNFe():
+            msgDict = {}
+            msgList = []
+
+            db = sqlite3.connect('data/testdb.db')
+            cursor = db.cursor()
 
             filepath = entr1.get()
 
             NFeDict = rNFe.readNFe(filepath)
-            print(NFeDict)
+            prepDict = iNFe.prepInputNFe2DB(NFeDict)
+
+            NFeID = prepDict['nfeTuple'][0]
+            flagDupe = False
+            flagDupe = iNFe.checkDuplicateNFe(NFeID,cursor)
+
+            if flagDupe:
+                msgDict['msgTitle'] = ' Operation cancelled:'
+                msgList.append('Duplicate NFe')
+            else:
+                outDict = iNFe.writeNFe2DB(prepDict,db)
+                if len(outDict['missingProd']) > 0:
+                    msgDict['msgTitle'] = ' Operation cancelled:'
+                    msgList.append('Product(s) with EAN')
+                    for i in outDict['missingProd']:
+                        msgList.append(i)
+                    msgList.append('not found in registered products table')
+
+                elif outDict['Error']:
+                    msgDict['msgTitle'] = ' Operation cancelled:'
+                    msgList.append(outDict['Error'])
+                else:
+                    msgDict['msgTitle'] = 'Import successful'
+
+            msgDict['msgList'] = msgList
+            MaP.popupmsg(msgDict)
+            db.close()
+
+            print(NFeID)
+            print(outDict['Error'])
             return(filepath)
 
         button = ttk.Button(PageFrame, text="Back Home",style='Front Page Button.TButton',command=lambda: controller.show_frame(StartPage))
         button.grid(row=2,pady=10,padx=10)
-        button1 = ttk.Button(PageFrame, text="Open",style='Front Page Button.TButton',command=filename)
+        button1 = ttk.Button(PageFrame, text="Open",style='Front Page Button.TButton',command=getFilename)
         button1.grid(row=1,column=2,pady=10,padx=10)
-        button2 = ttk.Button(PageFrame, text="Submit",style='Front Page Button.TButton',command=submit)
+        button2 = ttk.Button(PageFrame, text="Submit",style='Front Page Button.TButton',command=submitNFe)
         button2.grid(row=2,column=2,pady=10,padx=10)

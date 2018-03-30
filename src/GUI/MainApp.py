@@ -12,18 +12,31 @@ LARGE_FONT= ("Verdana", 12)
 NORM_FONT= ("Verdana", 10)
 SMALL_FONT= ("Verdana", 7)
 
-def popupmsg(msg):
+def popupmsg(msgDict):
     popup =tk.Tk()
+    #popup.geometry("300x80")
+    popup.resizable(width=True, height=True)
 
+    title = 'NPX'
+    label = []
+    msgTitle = msgDict['msgTitle']
+    msgList = msgDict['msgList']
 
+    if msgTitle:
+        title = title + msgTitle
 
-    popup.wm_title('NPX')
-    label = ttk.Label(popup, text =msg, font=NORM_FONT,anchor='center')
-    label.pack(side='top', fill='x', pady=10,anchor='center')
+    popup.wm_title(title)
+
+    label.append(ttk.Label(popup, text=msgTitle, font=LARGE_FONT, anchor='center'))
+    label[-1].grid(column=0,padx=10,pady=5)
+
+    for i in range(len(msgList)):
+        msg = msgList[i]
+        label.append(ttk.Label(popup, text=msg, font=NORM_FONT, anchor='center'))
+        label[-1].grid(column=0,padx=10,pady=1)
+        #label.pack(side='top', fill='x', pady=10,anchor='center')
     B1 = ttk.Button(popup, text='Ok',command=popup.destroy)
-    B1.pack()
-    popup.geometry("300x80")
-    popup.resizable(width=False, height=False)
+    B1.grid(column=0,pady=5)
     popup.mainloop()
 
 

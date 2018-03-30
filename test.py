@@ -10,10 +10,12 @@ os.makedirs('data',exist_ok=True)
 db = sqlite3.connect('data/testdb.db')
 createDB(db)
 
-filename = 'data/xml_test.xml'
-NFeDict = readNFe(filename)
+#filename = 'data/xml_test.xml'
+#NFeDict = readNFe(filename)
 
-inputNFe2DB(NFeDict,db)
+#inputNFe2DB(NFeDict,db)
+
+db.close()
 
 app = MaP.MainApp()
 app.geometry("940x720")
