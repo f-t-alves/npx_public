@@ -1,0 +1,12 @@
+<RCC>
+  <qresource prefix="NPX ICO">
+    <file>clinic.ico</file>
+    <file>clinic (1).png</file>
+    <file>clinic (2).png</file>
+    <file>clinic (3).png</file>
+    <file>clinic (4).png</file>
+    <file>clinic (5).png</file>
+    <file>clinic(6).png</file>
+    <file>clinic.png</file>
+  </qresource>
+</RCC>

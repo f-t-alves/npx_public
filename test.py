@@ -15,8 +15,3 @@ filename = 'data/xml_test.xml'
 NFeDict = readNFe(filename)
 
 inputNFe2DB(NFeDict,db)
-
-app = MaP.MainApp()
-app.geometry("940x270")
-app.resizable(width=True, height=True)
-app.mainloop()
