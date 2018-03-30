@@ -1,0 +1,2416 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Frame</class>
+ <widget class="QFrame" name="Frame">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>887</width>
+    <height>686</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Frame</string>
+  </property>
+  <property name="frameShape">
+   <enum>QFrame::StyledPanel</enum>
+  </property>
+  <property name="frameShadow">
+   <enum>QFrame::Raised</enum>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_19">
+   <item row="0" column="0">
+    <widget class="QFrame" name="InputFrame">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>777</width>
+       <height>584</height>
+      </size>
+     </property>
+     <property name="baseSize">
+      <size>
+       <width>777</width>
+       <height>584</height>
+      </size>
+     </property>
+     <property name="autoFillBackground">
+      <bool>true</bool>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_14">
+      <item row="0" column="0">
+       <layout class="QVBoxLayout" name="verticalLayout_6">
+        <item>
+         <widget class="QTabWidget" name="InputTabs">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="palette">
+           <palette>
+            <active>
+             <colorrole role="Light">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>240</red>
+                <green>240</green>
+                <blue>240</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Base">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>240</red>
+                <green>240</green>
+                <blue>240</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="NoRole">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>240</red>
+                <green>240</green>
+                <blue>240</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </active>
+            <inactive>
+             <colorrole role="Light">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>240</red>
+                <green>240</green>
+                <blue>240</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Base">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>240</red>
+                <green>240</green>
+                <blue>240</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="NoRole">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>240</red>
+                <green>240</green>
+                <blue>240</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </inactive>
+            <disabled>
+             <colorrole role="Light">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>240</red>
+                <green>240</green>
+                <blue>240</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Base">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>240</red>
+                <green>240</green>
+                <blue>240</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="NoRole">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>240</red>
+                <green>240</green>
+                <blue>240</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </disabled>
+           </palette>
+          </property>
+          <property name="autoFillBackground">
+           <bool>true</bool>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="inputMethodHints">
+           <set>Qt::ImhHiddenText</set>
+          </property>
+          <property name="currentIndex">
+           <number>2</number>
+          </property>
+          <widget class="QWidget" name="Descricao">
+           <attribute name="title">
+            <string>Descrição</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout">
+            <item row="0" column="0">
+             <widget class="QFrame" name="Description_Frame">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="autoFillBackground">
+               <bool>true</bool>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_11">
+               <item row="4" column="0" colspan="2">
+                <spacer name="DescrVerticSpacer">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="0" column="1">
+                <widget class="QWidget" name="Descr_Widget2" native="true">
+                 <layout class="QVBoxLayout" name="verticalLayout_3">
+                  <item>
+                   <widget class="QCheckBox" name="MedCheckBox_2">
+                    <property name="text">
+                     <string>Medicamento</string>
+                    </property>
+                    <property name="checked">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="SNGPC_Checkbox">
+                    <property name="text">
+                     <string>SNGPC</string>
+                    </property>
+                    <property name="autoRepeat">
+                     <bool>false</bool>
+                    </property>
+                    <property name="tristate">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QComboBox" name="Type_ComboBox">
+                    <item>
+                     <property name="text">
+                      <string>Genérico</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>Similar</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>Referência</string>
+                     </property>
+                    </item>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="0" column="0">
+                <widget class="QWidget" name="Descr_Widget1" native="true">
+                 <layout class="QGridLayout" name="gridLayout_3">
+                  <item row="4" column="0">
+                   <widget class="QLabel" name="PrinAtiv_Label">
+                    <property name="text">
+                     <string>Princípio Ativo</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="3">
+                   <widget class="QPushButton" name="PrinAtivSearchButton">
+                    <property name="toolTip">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/NPX ICO/search.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">image: url(:/NPX ICO/search.png);</string>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="icon">
+                     <iconset resource="npx.qrc">
+                      <normaloff>:/NPX ICO/search.png</normaloff>:/NPX ICO/search.png</iconset>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="Product_Label_2">
+                    <property name="text">
+                     <string>Produto</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="Reg_Label_2">
+                    <property name="text">
+                     <string>Reg. Ministério da Saúde</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="2">
+                   <widget class="QLineEdit" name="PrintAtiv_Entry"/>
+                  </item>
+                  <item row="0" column="2">
+                   <widget class="QLineEdit" name="Product_Entry_2"/>
+                  </item>
+                  <item row="2" column="2">
+                   <widget class="QLineEdit" name="Reg_Entry">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="Descr_Label">
+                    <property name="text">
+                     <string>Descrição Completa</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="2">
+                   <widget class="QLineEdit" name="Desc_Entry"/>
+                  </item>
+                  <item row="5" column="0">
+                   <widget class="QLabel" name="Lab_Label">
+                    <property name="text">
+                     <string>Laboratório</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="2">
+                   <widget class="QLineEdit" name="Lab_Entry"/>
+                  </item>
+                  <item row="6" column="2">
+                   <widget class="QLineEdit" name="Fabr_Entry">
+                    <property name="enabled">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="6" column="0">
+                   <widget class="QLabel" name="Fabr_Label">
+                    <property name="enabled">
+                     <bool>false</bool>
+                    </property>
+                    <property name="text">
+                     <string>Fabricante</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="3">
+                   <widget class="QPushButton" name="LabSearchButton">
+                    <property name="toolTip">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/NPX ICO/search.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">image: url(:/NPX ICO/search.png);</string>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="icon">
+                     <iconset resource="npx.qrc">
+                      <normaloff>:/NPX ICO/search.png</normaloff>:/NPX ICO/search.png</iconset>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="6" column="3">
+                   <widget class="QPushButton" name="FabrSearchButton">
+                    <property name="toolTip">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/NPX ICO/search.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">image: url(:/NPX ICO/search.png);</string>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="icon">
+                     <iconset resource="npx.qrc">
+                      <normaloff>:/NPX ICO/search.png</normaloff>:/NPX ICO/search.png</iconset>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="3" column="0" colspan="2">
+                <widget class="QWidget" name="Descr_Widget3" native="true">
+                 <layout class="QGridLayout" name="gridLayout_10">
+                  <item row="2" column="2">
+                   <widget class="QPushButton" name="Tab2Search">
+                    <property name="toolTip">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/NPX ICO/search.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">image: url(:/NPX ICO/search.png);</string>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="icon">
+                     <iconset resource="npx.qrc">
+                      <normaloff>:/NPX ICO/search.png</normaloff>:/NPX ICO/search.png</iconset>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="2">
+                   <widget class="QPushButton" name="Tab3Search">
+                    <property name="toolTip">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/NPX ICO/search.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">image: url(:/NPX ICO/search.png);</string>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="icon">
+                     <iconset resource="npx.qrc">
+                      <normaloff>:/NPX ICO/search.png</normaloff>:/NPX ICO/search.png</iconset>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="TabAux1_Label">
+                    <property name="text">
+                     <string>Tabela Aux1</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QLineEdit" name="TabAux2_Entry"/>
+                  </item>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="Etiqueta_Label">
+                    <property name="text">
+                     <string>Etiqueta Gôndula</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="2">
+                   <widget class="QPushButton" name="Tab1Search">
+                    <property name="toolTip">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/NPX ICO/search.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">image: url(:/NPX ICO/search.png);</string>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="icon">
+                     <iconset resource="npx.qrc">
+                      <normaloff>:/NPX ICO/search.png</normaloff>:/NPX ICO/search.png</iconset>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="1">
+                   <widget class="QLineEdit" name="TabAux3_Entry"/>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QLineEdit" name="TabAux1_Entry"/>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="TabAux2_Label">
+                    <property name="text">
+                     <string>Tabela Aux2</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QLineEdit" name="Etiqueta_Entry"/>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="QLabel" name="TabAux3_Label">
+                    <property name="text">
+                     <string>Tabela Aux3</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="Price">
+           <attribute name="title">
+            <string>Preço</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_13">
+            <item row="1" column="0">
+             <widget class="QFrame" name="Price_Frame">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="autoFillBackground">
+               <bool>true</bool>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_22">
+               <item row="0" column="0" alignment="Qt::AlignTop">
+                <widget class="QWidget" name="PriceWidget2" native="true">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_2">
+                  <item>
+                   <widget class="QLabel" name="PriceCostType_Label">
+                    <property name="text">
+                     <string>Tipo de Preço de Custo Atualizado na Entr. Mercadoria</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QComboBox" name="PriceCostType_ComboBox">
+                    <property name="styleSheet">
+                     <string notr="true">alternate-background-color: rgb(255, 255, 255);</string>
+                    </property>
+                    <item>
+                     <property name="text">
+                      <string>VLR. UNITÁRIO BRUTO</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>VLR. UNITÁRIO BRUTO + ST</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>VLR. UNITÁRIO BRUTO + ST + IPI</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>VLR. UNITÁRIO LÍQUIDO</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>VLR. UNITÁRIO LÍQUIDO + ST</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>VLR. UNITÁRIO LÍQUIDO + ST + IPI</string>
+                     </property>
+                    </item>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="2" column="2">
+                <widget class="QWidget" name="PriceWidget4" native="true">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_4">
+                  <item row="0" column="2">
+                   <widget class="QLabel" name="Discount_Label">
+                    <property name="text">
+                     <string>Desconto(%)</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="2">
+                   <widget class="QLabel" name="MaxDiscount_Label">
+                    <property name="text">
+                     <string>Desconto Max(%)</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QLineEdit" name="CostPrice_Entry"/>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="SellPrice_Label">
+                    <property name="text">
+                     <string>Preço de Venda</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QLineEdit" name="SellPrice_Entry"/>
+                  </item>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="CostPrice_Label">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string>Preço de Custo</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="3">
+                   <widget class="QLineEdit" name="Discount_Entry"/>
+                  </item>
+                  <item row="1" column="3">
+                   <widget class="QLineEdit" name="MaxDiscount_Entry"/>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="ProfitMargin_Label">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string>Margem de Lucro(%)</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QLineEdit" name="ProfitMargin_Entry"/>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="0" column="2">
+                <widget class="QWidget" name="PriceWidget3" native="true">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_5">
+                  <item row="0" column="0" alignment="Qt::AlignTop">
+                   <widget class="QLabel" name="AllowDiscount_Label">
+                    <property name="text">
+                     <string>Permite Desconto na Venda?</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0" alignment="Qt::AlignTop">
+                   <widget class="QComboBox" name="AllowDiscount_ComboBox">
+                    <property name="styleSheet">
+                     <string notr="true">alternate-background-color: rgb(255, 255, 255);</string>
+                    </property>
+                    <item>
+                     <property name="text">
+                      <string>SIM</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>NÃO</string>
+                     </property>
+                    </item>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QWidget" name="PriceWidget1" native="true">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <layout class="QFormLayout" name="formLayout_4">
+                  <property name="fieldGrowthPolicy">
+                   <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+                  </property>
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="CostLastOrder">
+                    <property name="text">
+                     <string>Custo Última Entrada</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QLineEdit" name="CostLastOrder_Entry">
+                    <property name="styleSheet">
+                     <string notr="true">background-color: rgb(213, 213, 213);</string>
+                    </property>
+                    <property name="readOnly">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="QLabel" name="CostLastOrder_ST">
+                    <property name="text">
+                     <string>Última Entrada + ST</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="1">
+                   <widget class="QLineEdit" name="CostLastOrder_ST_Entry">
+                    <property name="styleSheet">
+                     <string notr="true">background-color: rgb(213, 213, 213);</string>
+                    </property>
+                    <property name="readOnly">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="0">
+                   <widget class="QLabel" name="PMC">
+                    <property name="text">
+                     <string>Valor PMC</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="1">
+                   <widget class="QLineEdit" name="PMC_Entry">
+                    <property name="styleSheet">
+                     <string notr="true">background-color: rgb(213, 213, 213);</string>
+                    </property>
+                    <property name="readOnly">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="3" column="0" colspan="4">
+                <spacer name="PriceVerticalSpacer">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="1" column="0" colspan="3">
+                <widget class="Line" name="PriceLine">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="Taxes">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <attribute name="title">
+            <string>Tributação</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_9">
+            <item row="0" column="0">
+             <widget class="QFrame" name="TaxesFrame1">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="autoFillBackground">
+               <bool>true</bool>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_7">
+               <item row="2" column="0" colspan="3">
+                <spacer name="verticalSpacer_13">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::Fixed</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>10</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="11" column="2">
+                <widget class="QLabel" name="ReceitaCofins_Label">
+                 <property name="text">
+                  <string>Natur. Receita COFINS</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="11" column="0">
+                <widget class="QLabel" name="BaseST_Label">
+                 <property name="text">
+                  <string>Tipo Base ST</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="2">
+                <widget class="QWidget" name="TaxesWidget1" native="true">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_17">
+                  <item row="1" column="1">
+                   <widget class="QLineEdit" name="NCM_Entry">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QLabel" name="NCM_Label">
+                    <property name="text">
+                     <string>Classif. Fiscal/NCM</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="NBS_Label">
+                    <property name="text">
+                     <string>Código NBS</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLineEdit" name="NBS_Entry">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="2">
+                   <widget class="QLineEdit" name="Cest_Entry">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="2">
+                   <widget class="QLabel" name="CEST_Label">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>62</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>Classif. CEST</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="12" column="0">
+                <widget class="QComboBox" name="BaseST_ComboBox"/>
+               </item>
+               <item row="8" column="2">
+                <widget class="QComboBox" name="COFINS_Label"/>
+               </item>
+               <item row="5" column="0">
+                <widget class="QLabel" name="Origem_Label">
+                 <property name="text">
+                  <string>Origem</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="10" column="2">
+                <widget class="QLineEdit" name="ReceitaPIS_Entry"/>
+               </item>
+               <item row="12" column="2">
+                <widget class="QLineEdit" name="ReceitaCofins_Entry"/>
+               </item>
+               <item row="4" column="2">
+                <widget class="Line" name="PIS_COFINS_Line">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                </widget>
+               </item>
+               <item row="6" column="2">
+                <widget class="QComboBox" name="PIS_ComboBox"/>
+               </item>
+               <item row="3" column="0">
+                <widget class="QLabel" name="ICMS_ISS_Label">
+                 <property name="text">
+                  <string>ICMS/ISS</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="1" rowspan="8">
+                <spacer name="horizontalSpacer">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>250</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="9" column="0">
+                <widget class="QLabel" name="ICMS_Label">
+                 <property name="text">
+                  <string>Alíq. ICMS/ISS</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="2">
+                <widget class="QLabel" name="PIS_COFINS_Label">
+                 <property name="text">
+                  <string>PIS/COFINS</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="14" column="0">
+                <widget class="QLineEdit" name="BaseICMS_Entry">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="2">
+                <widget class="QLabel" name="PIS_Label">
+                 <property name="text">
+                  <string>CST PIS</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="10" column="0">
+                <widget class="QComboBox" name="ICMS_ComboBox"/>
+               </item>
+               <item row="7" column="2">
+                <widget class="QLabel" name="COFINS_Label_2">
+                 <property name="text">
+                  <string>CST COFINS</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="7" column="0">
+                <widget class="QLabel" name="CSOSN_Label">
+                 <property name="text">
+                  <string>CSOSN/CST ICMS</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="8" column="0">
+                <widget class="QComboBox" name="CSOSN_ComboBox"/>
+               </item>
+               <item row="9" column="2">
+                <widget class="QLabel" name="ReceitaPIS_Label">
+                 <property name="text">
+                  <string>Natur. Receita PIS</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="6" column="0">
+                <widget class="QComboBox" name="Origem_ComboBox">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                </widget>
+               </item>
+               <item row="19" column="0" colspan="3">
+                <spacer name="verticalSpacer_7">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::Fixed</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>45</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="4" column="0" colspan="2">
+                <widget class="Line" name="ICMS_Line">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="0" colspan="2">
+                <widget class="QWidget" name="TaxesWidget2" native="true">
+                 <layout class="QGridLayout" name="gridLayout_18">
+                  <item row="2" column="0">
+                   <widget class="QComboBox" name="SPED_ComboBox">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="SPED_Label">
+                    <property name="text">
+                     <string>Tipo SPED</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="13" column="0">
+                <widget class="QLabel" name="BaseICMS_Label">
+                 <property name="text">
+                  <string>Red. Base ICMS (%)</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="18" column="0">
+                <widget class="QComboBox" name="DesconsiderarEAN_ComboBox">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>80</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <item>
+                  <property name="text">
+                   <string>SIM</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>NÃO</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="17" column="0">
+                <widget class="QLabel" name="DesconsiderarEAN_Label">
+                 <property name="text">
+                  <string>Desconsiderar Cód. Barras na Geração NFC-e/NF-e/CF-e:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="15" column="0">
+                <spacer name="verticalSpacer_2">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::Fixed</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>60</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="16" column="0" colspan="2">
+                <widget class="Line" name="line">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="SNGPC">
+           <attribute name="title">
+            <string>SNGPC</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_12">
+            <item row="0" column="0">
+             <widget class="QFrame" name="SNGPC_Frame">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="autoFillBackground">
+               <bool>true</bool>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_2">
+               <item row="0" column="0">
+                <widget class="QWidget" name="SNGPCWidget" native="true">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_6">
+                  <item row="0" column="0">
+                   <widget class="QRadioButton" name="Antibiotico_radioButton">
+                    <property name="text">
+                     <string>Antibióticos</string>
+                    </property>
+                    <property name="checked">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QRadioButton" name="ControleEspecial_radioButton">
+                    <property name="text">
+                     <string>Controle Especial</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="1" column="0" colspan="2">
+                <widget class="QFrame" name="SNGPC_Frame2">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="frameShape">
+                  <enum>QFrame::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_8">
+                  <item row="3" column="0">
+                   <widget class="QLabel" name="Volume_Label">
+                    <property name="text">
+                     <string>Volume(ML)</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="1">
+                   <widget class="QLineEdit" name="Volume_Entry">
+                    <property name="styleSheet">
+                     <string notr="true"/>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+                    </property>
+                    <property name="readOnly">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="1">
+                   <widget class="QLineEdit" name="Concentracao_Entry">
+                    <property name="styleSheet">
+                     <string notr="true"/>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+                    </property>
+                    <property name="readOnly">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="0">
+                   <widget class="QLabel" name="Concentracao_Label">
+                    <property name="text">
+                     <string>Concentração(MG)</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="CapMedia_Label">
+                    <property name="text">
+                     <string>Cap. Média (ML)</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="2">
+                   <widget class="QLabel" name="DiasTrat_Label">
+                    <property name="text">
+                     <string>Dias Tratamento</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QLineEdit" name="CapMedia_Entry">
+                    <property name="mouseTracking">
+                     <bool>true</bool>
+                    </property>
+                    <property name="focusPolicy">
+                     <enum>Qt::StrongFocus</enum>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true"/>
+                    </property>
+                    <property name="echoMode">
+                     <enum>QLineEdit::Normal</enum>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+                    </property>
+                    <property name="readOnly">
+                     <bool>false</bool>
+                    </property>
+                    <property name="cursorMoveStyle">
+                     <enum>Qt::LogicalMoveStyle</enum>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="3">
+                   <widget class="QLineEdit" name="DiasTrat_Entry">
+                    <property name="styleSheet">
+                     <string notr="true"/>
+                    </property>
+                    <property name="readOnly">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="3">
+                   <widget class="QLineEdit" name="Apres_Entry">
+                    <property name="styleSheet">
+                     <string notr="true"/>
+                    </property>
+                    <property name="readOnly">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="2">
+                   <widget class="QLabel" name="Apres_Label">
+                    <property name="text">
+                     <string>Apres./Concentr.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="2">
+                   <widget class="QLabel" name="NomeMedic_Label">
+                    <property name="text">
+                     <string>Nome Medicamento</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="3">
+                   <widget class="QLineEdit" name="NomeMedic_Entry">
+                    <property name="styleSheet">
+                     <string notr="true"/>
+                    </property>
+                    <property name="readOnly">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="0">
+                   <widget class="QLabel" name="UnidEmbalagemLabel">
+                    <property name="text">
+                     <string>Unid. por Embalagem</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="1">
+                   <widget class="QLineEdit" name="UnidEmbalagem_Entry">
+                    <property name="styleSheet">
+                     <string notr="true"/>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+                    </property>
+                    <property name="readOnly">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="3">
+                   <widget class="QComboBox" name="UnidadeSNGPC_ComboBox_2">
+                    <property name="enabled">
+                     <bool>false</bool>
+                    </property>
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <item>
+                     <property name="text">
+                      <string>Caixa</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>Frasco</string>
+                     </property>
+                    </item>
+                   </widget>
+                  </item>
+                  <item row="5" column="2">
+                   <widget class="QLabel" name="UnidadeSNGPC_Label_2">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string>Unidade SNGPC</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="2" column="0" colspan="2">
+                <spacer name="verticalSpacer">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="0" column="1">
+                <widget class="QFrame" name="ControleEspecial_Frame">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="frameShape">
+                  <enum>QFrame::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_16">
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="ListaContEsp_Label">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="visible">
+                     <bool>false</bool>
+                    </property>
+                    <property name="text">
+                     <string>Lista</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QLabel" name="AdendoContEsp_Label">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="visible">
+                     <bool>false</bool>
+                    </property>
+                    <property name="text">
+                     <string>Adendo</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QComboBox" name="ListaContEsp_ComboBox">
+                    <property name="enabled">
+                     <bool>false</bool>
+                    </property>
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="visible">
+                     <bool>false</bool>
+                    </property>
+                    <item>
+                     <property name="text">
+                      <string>A1</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>A2</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>A3</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>B1</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>B2</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>C1</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>C2</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>C3</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>C4</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>C5</string>
+                     </property>
+                    </item>
+                   </widget>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QComboBox" name="AdendoContEsp_ComboBox">
+                    <property name="enabled">
+                     <bool>false</bool>
+                    </property>
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="visible">
+                     <bool>false</bool>
+                    </property>
+                    <item>
+                     <property name="text">
+                      <string>Adendo Teste</string>
+                     </property>
+                    </item>
+                   </widget>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="ListaAnti_Label">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string>Lista</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="QComboBox" name="ListaAnti_ComboBox">
+                    <property name="enabled">
+                     <bool>false</bool>
+                    </property>
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <item>
+                     <property name="text">
+                      <string>N1</string>
+                     </property>
+                    </item>
+                   </widget>
+                  </item>
+                  <item row="3" column="1">
+                   <widget class="QComboBox" name="AdendoAnti_ComboBox">
+                    <property name="enabled">
+                     <bool>false</bool>
+                    </property>
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QLabel" name="AdendoAnti_Label">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string>Adendo</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="BarCodes">
+           <attribute name="title">
+            <string>Código de Barras</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_21">
+            <item row="0" column="0">
+             <widget class="QFrame" name="EAN_Frame">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="autoFillBackground">
+               <bool>true</bool>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_20">
+               <item row="0" column="1">
+                <widget class="QLabel" name="label_8">
+                 <property name="text">
+                  <string>Cod. Barras Adicional</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="2">
+                <widget class="QLineEdit" name="lineEdit_8"/>
+               </item>
+               <item row="0" column="4">
+                <widget class="QLineEdit" name="lineEdit_10"/>
+               </item>
+               <item row="0" column="3">
+                <widget class="QLabel" name="label_10">
+                 <property name="text">
+                  <string>Fator</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0" colspan="6">
+                <layout class="QGridLayout" name="gridLayout_31">
+                 <item row="3" column="1">
+                  <widget class="QWidget" name="EANWidget1" native="true">
+                   <layout class="QGridLayout" name="gridLayout_32">
+                    <item row="0" column="2">
+                     <widget class="QPushButton" name="EditarButton">
+                      <property name="text">
+                       <string>Editar</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="2">
+                     <widget class="QPushButton" name="WhatvsButton">
+                      <property name="text">
+                       <string>Whatvs</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="1">
+                     <widget class="QPushButton" name="AdicionarButton">
+                      <property name="text">
+                       <string>Adicionar</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="1">
+                     <widget class="QPushButton" name="ExcluirButton">
+                      <property name="text">
+                       <string>Excluir</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="0" rowspan="2">
+                     <spacer name="horizontalSpacer_11">
+                      <property name="orientation">
+                       <enum>Qt::Horizontal</enum>
+                      </property>
+                      <property name="sizeType">
+                       <enum>QSizePolicy::Fixed</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>40</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                     </spacer>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <spacer name="verticalSpacer_23">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeType">
+                    <enum>QSizePolicy::Fixed</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>10</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item row="2" column="1">
+                  <spacer name="verticalSpacer_22">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeType">
+                    <enum>QSizePolicy::Fixed</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>25</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item row="1" column="0">
+                  <spacer name="horizontalSpacer_12">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeType">
+                    <enum>QSizePolicy::Fixed</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item row="1" column="2">
+                  <spacer name="horizontalSpacer_13">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeType">
+                    <enum>QSizePolicy::Fixed</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item row="1" column="1">
+                  <widget class="QTableWidget" name="EANTable">
+                   <attribute name="horizontalHeaderVisible">
+                    <bool>false</bool>
+                   </attribute>
+                   <attribute name="horizontalHeaderCascadingSectionResizes">
+                    <bool>true</bool>
+                   </attribute>
+                   <attribute name="horizontalHeaderDefaultSectionSize">
+                    <number>327</number>
+                   </attribute>
+                   <attribute name="horizontalHeaderHighlightSections">
+                    <bool>true</bool>
+                   </attribute>
+                   <attribute name="horizontalHeaderMinimumSectionSize">
+                    <number>80</number>
+                   </attribute>
+                   <attribute name="horizontalHeaderStretchLastSection">
+                    <bool>false</bool>
+                   </attribute>
+                   <attribute name="verticalHeaderDefaultSectionSize">
+                    <number>30</number>
+                   </attribute>
+                   <column>
+                    <property name="text">
+                     <string>EAN</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>Fator</string>
+                    </property>
+                   </column>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item row="0" column="0">
+                <spacer name="horizontalSpacer_6">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::Fixed</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>23</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="0" column="5">
+                <spacer name="horizontalSpacer_3">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::Fixed</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>18</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="2" column="0" colspan="6">
+                <spacer name="verticalSpacer_4">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+        <item>
+         <widget class="QWidget" name="ButtonWidget" native="true">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_15">
+           <item row="0" column="0">
+            <widget class="QPushButton" name="Submit_Button">
+             <property name="text">
+              <string>Submit</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QPushButton" name="Clear_Button">
+             <property name="text">
+              <string>Clear</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="QPushButton" name="pushButton_7">
+             <property name="text">
+              <string>Whatvs3</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="QPushButton" name="Back_Button">
+             <property name="text">
+              <string>Back</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="3">
+            <widget class="QPushButton" name="Search_Button">
+             <property name="text">
+              <string>Search</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QPushButton" name="pushButton_6">
+             <property name="text">
+              <string>Whatvs1</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QPushButton" name="pushButton_5">
+             <property name="text">
+              <string>Whatvs2</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="3">
+            <widget class="QPushButton" name="pushButton_8">
+             <property name="text">
+              <string>Whatvs4</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="npx.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>SNGPC_Checkbox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>SNGPC_Frame</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>818</x>
+     <y>152</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>400</x>
+     <y>250</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>MedCheckBox_2</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>PrintAtiv_Entry</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>818</x>
+     <y>111</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>674</x>
+     <y>170</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>MedCheckBox_2</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>Reg_Entry</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>818</x>
+     <y>103</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>315</x>
+     <y>134</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Antibiotico_radioButton</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>ListaContEsp_Label</receiver>
+   <slot>setHidden(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>259</x>
+     <y>87</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>485</x>
+     <y>81</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Antibiotico_radioButton</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>ListaContEsp_ComboBox</receiver>
+   <slot>setHidden(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>298</x>
+     <y>87</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>537</x>
+     <y>91</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Antibiotico_radioButton</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>AdendoContEsp_Label</receiver>
+   <slot>setHidden(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>309</x>
+     <y>87</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>537</x>
+     <y>91</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Antibiotico_radioButton</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>AdendoContEsp_ComboBox</receiver>
+   <slot>setHidden(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>286</x>
+     <y>87</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>537</x>
+     <y>91</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ControleEspecial_radioButton</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>ListaContEsp_Label</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>327</x>
+     <y>110</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>490</x>
+     <y>78</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ControleEspecial_radioButton</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>ListaContEsp_ComboBox</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>273</x>
+     <y>110</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>537</x>
+     <y>91</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ControleEspecial_radioButton</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>AdendoContEsp_Label</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>282</x>
+     <y>110</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>537</x>
+     <y>91</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ControleEspecial_radioButton</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>AdendoContEsp_ComboBox</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>271</x>
+     <y>110</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>537</x>
+     <y>91</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ControleEspecial_radioButton</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>ListaAnti_Label</receiver>
+   <slot>setHidden(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>274</x>
+     <y>110</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>629</x>
+     <y>84</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ControleEspecial_radioButton</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>AdendoAnti_Label</receiver>
+   <slot>setHidden(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>280</x>
+     <y>110</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>817</x>
+     <y>84</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ControleEspecial_radioButton</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>ListaAnti_ComboBox</receiver>
+   <slot>setHidden(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>288</x>
+     <y>110</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>629</x>
+     <y>110</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ControleEspecial_radioButton</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>AdendoAnti_ComboBox</receiver>
+   <slot>setHidden(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>270</x>
+     <y>110</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>817</x>
+     <y>110</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Antibiotico_radioButton</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>ListaAnti_Label</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>325</x>
+     <y>87</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>629</x>
+     <y>84</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Antibiotico_radioButton</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>AdendoAnti_Label</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>301</x>
+     <y>87</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>817</x>
+     <y>84</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Antibiotico_radioButton</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>ListaAnti_ComboBox</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>309</x>
+     <y>87</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>629</x>
+     <y>110</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Antibiotico_radioButton</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>AdendoAnti_ComboBox</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>249</x>
+     <y>87</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>817</x>
+     <y>110</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>MedCheckBox_2</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>Lab_Entry</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>761</x>
+     <y>103</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>227</x>
+     <y>195</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>MedCheckBox_2</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>Lab_Label</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>800</x>
+     <y>105</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>102</x>
+     <y>198</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>MedCheckBox_2</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>Fabr_Label</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>775</x>
+     <y>106</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>88</x>
+     <y>231</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>MedCheckBox_2</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>Fabr_Entry</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>805</x>
+     <y>104</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>358</x>
+     <y>222</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SNGPC_Checkbox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>SNGPC_Frame2</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>744</x>
+     <y>150</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>434</x>
+     <y>185</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SNGPC_Checkbox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>ControleEspecial_Frame</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>764</x>
+     <y>149</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>632</x>
+     <y>91</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SNGPC_Checkbox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>UnidadeSNGPC_ComboBox_2</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>782</x>
+     <y>150</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>679</x>
+     <y>224</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SNGPC_Checkbox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>ListaAnti_ComboBox</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>741</x>
+     <y>148</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>538</x>
+     <y>100</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SNGPC_Checkbox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>ListaContEsp_ComboBox</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>767</x>
+     <y>151</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>487</x>
+     <y>76</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SNGPC_Checkbox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>AdendoAnti_ComboBox</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>785</x>
+     <y>148</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>726</x>
+     <y>100</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SNGPC_Checkbox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>AdendoContEsp_ComboBox</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>807</x>
+     <y>148</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>487</x>
+     <y>76</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>function()</slot>
+  <slot>LabelEntryChange()</slot>
+ </slots>
+</ui>
