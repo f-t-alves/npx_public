@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="NPX ICO">
+    <file>search.png</file>
     <file>clinic.ico</file>
     <file>clinic (1).png</file>
     <file>clinic (2).png</file>
