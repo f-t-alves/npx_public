@@ -29,7 +29,7 @@ class Ui_MainWindow(object):
 
         for F in (Ui_StartPage,Ui_InputPage):
 
-            Frame = F(self.centralwidget, self)
+            Frame = F(self.centralwidget)
 
             self.frames[F] = Frame
             Frame.setVisible(False)
@@ -37,16 +37,6 @@ class Ui_MainWindow(object):
 
 
         self.frames[Ui_StartPage].setVisible(True)
-
-    # def show_frame(self,ctrl):
-    #
-    #     for F in self.frames:
-    #         self.frames[F].setVisible(False)
-    #     frame = self.frames[ctrl]
-    #     frame.setVisible(True)
-
-
-
 
         MainWindow.setCentralWidget(self.centralwidget)
 
@@ -101,6 +91,19 @@ class Ui_MainWindow(object):
         self.actionLo.setText(QtGui.QApplication.translate("MainWindow", "lo", None, QtGui.QApplication.UnicodeUTF8))
         self.actionBackup.setText(QtGui.QApplication.translate("MainWindow", "Backup", None, QtGui.QApplication.UnicodeUTF8))
         self.actionAlguma_Coisa.setText(QtGui.QApplication.translate("MainWindow", "Alguma Coisa", None, QtGui.QApplication.UnicodeUTF8))
+
+        def show_frame(ctrl):
+
+            for F in self.frames:
+                self.frames[F].setVisible(False)
+            frame = self.frames[ctrl]
+            frame.setVisible(True)
+
+        # Bloco com os comandos que dão link entre as frames
+
+        self.frames[Ui_StartPage].Produto_Button.clicked.connect(lambda: show_frame(Ui_InputPage) )
+        self.frames[Ui_InputPage].Back_Button.clicked.connect(lambda: show_frame(Ui_StartPage) )
+
 
 import npx_rc
 

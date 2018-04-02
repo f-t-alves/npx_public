@@ -10,7 +10,7 @@
 from PySide import QtCore, QtGui
 
 class Ui_InputPage(QtGui.QWidget):
-    def __init__(self, master, ctrl):
+    def __init__(self, master):
         QtGui.QWidget.__init__(self,master)
         self.gridLayout_19 = QtGui.QGridLayout(self)
         self.gridLayout_19.setObjectName("gridLayout_19")
@@ -931,7 +931,7 @@ class Ui_InputPage(QtGui.QWidget):
         self.gridLayout_19.addWidget(self.InputFrame, 0, 0, 1, 1)
 
         self.retranslateUi(self)
-        self.InputTabs.setCurrentIndex(2)
+        self.InputTabs.setCurrentIndex(0)
         QtCore.QObject.connect(self.SNGPC_Checkbox, QtCore.SIGNAL("toggled(bool)"), self.SNGPC_Frame.setEnabled)
         QtCore.QObject.connect(self.MedCheckBox_2, QtCore.SIGNAL("toggled(bool)"), self.PrintAtiv_Entry.setEnabled)
         QtCore.QObject.connect(self.MedCheckBox_2, QtCore.SIGNAL("toggled(bool)"), self.Reg_Entry.setEnabled)
