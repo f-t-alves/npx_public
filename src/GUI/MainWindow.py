@@ -10,6 +10,8 @@
 from PySide import QtCore, QtGui
 from InputFrame import Ui_InputPage
 from StartPageFrame import Ui_StartPage
+from NFeInput import Ui_NFe_Frame
+
 
 class Ui_MainWindow(object):
     def __init__(self, MainWindow):
@@ -27,7 +29,7 @@ class Ui_MainWindow(object):
         self.frames = {}
 
 
-        for F in (Ui_StartPage,Ui_InputPage):
+        for F in (Ui_StartPage,Ui_InputPage,Ui_NFe_Frame):
 
             Frame = F(self.centralwidget)
 
@@ -102,7 +104,9 @@ class Ui_MainWindow(object):
         # Bloco com os comandos que dão link entre as frames
 
         self.frames[Ui_StartPage].Produto_Button.clicked.connect(lambda: show_frame(Ui_InputPage) )
+        self.frames[Ui_StartPage].NFe_Button.clicked.connect(lambda: show_frame(Ui_NFe_Frame) )
         self.frames[Ui_InputPage].Back_Button.clicked.connect(lambda: show_frame(Ui_StartPage) )
+        self.frames[Ui_NFe_Frame].CancelarButton.clicked.connect(lambda: show_frame(Ui_StartPage) )
 
 
 import npx_rc
