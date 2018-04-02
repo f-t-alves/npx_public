@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Frame</class>
- <widget class="QFrame" name="Frame">
+ <class>SearchBoxAlfa</class>
+ <widget class="QFrame" name="SearchBoxAlfa">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>875</width>
-    <height>639</height>
+    <width>895</width>
+    <height>599</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -183,5 +183,25 @@
  <resources>
   <include location="npx.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>SubmitButton</sender>
+   <signal>clicked()</signal>
+   <receiver>SearchBoxAlfa</receiver>
+   <slot>function()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>563</x>
+     <y>613</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>671</x>
+     <y>772</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>function()</slot>
+ </slots>
 </ui>

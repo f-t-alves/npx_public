@@ -8,45 +8,44 @@
 # WARNING! All changes made in this file will be lost!
 
 from PySide import QtCore, QtGui
-import InputFrame as Inp
-import StartPageFrame as StP
+from InputFrame import Ui_InputPage
+from StartPageFrame import Ui_StartPage
 
 class Ui_MainWindow(object):
-    def setupUi(self, MainWindow):
+    def __init__(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(800, 600)
+        MainWindow.resize(1040, 720)
+
         self.centralwidget = QtGui.QWidget(MainWindow)
 
 
         self.centralwidget.setObjectName("centralwidget")
-
-        Frame = QtGui.QFrame(self.centralwidget)
-        # Frame.setObjectName("Frame")
-        # self.gridLayoutFrame = QtGui.QGridLayout(Frame)
-        # self.gridLayoutFrame.setObjectName("FrameLayout")
-        Frame.show()
-
+        self.gridLayout = QtGui.QGridLayout(self.centralwidget)
+        self.gridLayout.setObjectName("CentralLayout")
 
 
         self.frames = {}
 
-        for F in (StP.Ui_Frame,Inp.Ui_Frame):
 
-            Frame = QtGui.QFrame(self.centralwidget)
-            self.gridLayout = QtGui.QGridLayout(Frame)
-            ui = F()
-            ui.setupUi(Frame)
+        for F in (Ui_StartPage,Ui_InputPage):
+
+            Frame = F(self.centralwidget, self)
+
             self.frames[F] = Frame
             Frame.setVisible(False)
+            self.gridLayout.addWidget(Frame, 0, 0, 1, 1)
 
-        def show_frame(ctrl):
 
-            for F in self.frames:
-                self.frames[F].setVisible(False)
-            frame = self.frames[ctrl]
-            frame.setVisible(True)
+        self.frames[Ui_StartPage].setVisible(True)
 
-        show_frame(Inp.Ui_Frame)
+    # def show_frame(self,ctrl):
+    #
+    #     for F in self.frames:
+    #         self.frames[F].setVisible(False)
+    #     frame = self.frames[ctrl]
+    #     frame.setVisible(True)
+
+
 
 
         MainWindow.setCentralWidget(self.centralwidget)
@@ -109,7 +108,7 @@ if __name__ == "__main__":
     import sys
     app = QtGui.QApplication(sys.argv)
     MainWindow = QtGui.QMainWindow()
-    ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
+    ui = Ui_MainWindow(MainWindow)
+    #ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
