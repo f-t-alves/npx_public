@@ -11,6 +11,9 @@ from PySide import QtCore, QtGui
 from InputFrame import Ui_InputPage
 from StartPageFrame import Ui_StartPage
 from NFeInput import Ui_NFe_Frame
+from LabInput import Ui_LabInput
+from DistInput import Ui_DistInput
+from ClienteInput import Ui_ClienteFrame
 
 
 class Ui_MainWindow(object):
@@ -29,7 +32,7 @@ class Ui_MainWindow(object):
         self.frames = {}
 
 
-        for F in (Ui_StartPage,Ui_InputPage,Ui_NFe_Frame):
+        for F in (Ui_StartPage,Ui_InputPage,Ui_NFe_Frame,Ui_LabInput,Ui_DistInput,Ui_ClienteFrame):
 
             Frame = F(self.centralwidget)
 
@@ -105,8 +108,15 @@ class Ui_MainWindow(object):
 
         self.frames[Ui_StartPage].Produto_Button.clicked.connect(lambda: show_frame(Ui_InputPage) )
         self.frames[Ui_StartPage].NFe_Button.clicked.connect(lambda: show_frame(Ui_NFe_Frame) )
+        self.frames[Ui_StartPage].Laboratorios_Button.clicked.connect(lambda: show_frame(Ui_LabInput) )
+        self.frames[Ui_StartPage].Distribuidor_Button.clicked.connect(lambda: show_frame(Ui_DistInput) )
+        self.frames[Ui_StartPage].Clientes_Button.clicked.connect(lambda: show_frame(Ui_ClienteFrame) )
         self.frames[Ui_InputPage].Back_Button.clicked.connect(lambda: show_frame(Ui_StartPage) )
         self.frames[Ui_NFe_Frame].CancelarButton.clicked.connect(lambda: show_frame(Ui_StartPage) )
+        self.frames[Ui_LabInput].CancelarButton.clicked.connect(lambda: show_frame(Ui_StartPage) )
+        self.frames[Ui_DistInput].CancelarButton.clicked.connect(lambda: show_frame(Ui_StartPage) )
+        self.frames[Ui_ClienteFrame].Cancelar_Button.clicked.connect(lambda: show_frame(Ui_StartPage) )
+
 
 
 import npx_rc
