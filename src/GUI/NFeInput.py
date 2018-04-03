@@ -10,6 +10,11 @@
 from PySide import QtCore, QtGui
 from PySide.QtGui import QFileDialog
 
+import sqlite3
+from inputNFe import inputNFe2DB as iNFe
+from inputNFe import readNFe as rNFe
+from config import dbPath
+
 class Ui_NFe_Frame(QtGui.QWidget):
     def __init__(self, master):
         QtGui.QWidget.__init__(self,master)
@@ -53,6 +58,47 @@ class Ui_NFe_Frame(QtGui.QWidget):
         self.retranslateUi(self)
         QtCore.QMetaObject.connectSlotsByName(self)
 
+    def selectFile(self):
+        filename = QFileDialog.getOpenFileName(parent=self, caption='Open file', dir='.', filter='*.XML')[0]
+        self.FilePath_Entry.setText(filename)
+
+    def submitNFe(self):
+        msgDict = {}
+        msgList = []
+
+        filepath = self.FilePath_Entry.text()
+        print(filepath)
+
+        db = sqlite3.connect(dbPath)
+        cursor = db.cursor()
+        NFeDict = rNFe.readNFe(filepath)
+        prepDict = iNFe.prepInputNFe2DB(NFeDict)
+        NFeID = prepDict['nfeTuple'][0]
+        flagDupe = False
+        flagDupe = iNFe.checkDuplicateNFe(NFeID,cursor)
+        if flagDupe:
+            msgDict['msgTitle'] = ' Operation cancelled:'
+            msgList.append('Duplicate NFe')
+        else:
+            outDict = iNFe.writeNFe2DB(prepDict,db)
+            if len(outDict['missingProd']) > 0:
+                msgDict['msgTitle'] = ' Operation cancelled:'
+                msgList.append('Product(s) with EAN')
+                for i in outDict['missingProd']:
+                    msgList.append(i)
+                msgList.append('not found in registered products table')
+            elif outDict['Error']:
+                msgDict['msgTitle'] = ' Operation cancelled:'
+                msgList.append(outDict['Error'])
+            else:
+                msgDict['msgTitle'] = 'Import successful'
+        msgDict['msgList'] = msgList
+        #MaP.popupmsg(msgDict)
+        db.close()
+        print(NFeID)
+        print(msgDict)
+        return(filepath)
+
     def retranslateUi(self, NFe_Frame):
         NFe_Frame.setWindowTitle(QtGui.QApplication.translate("NFe_Frame", "Frame", None, QtGui.QApplication.UnicodeUTF8))
         self.SalvarButton.setText(QtGui.QApplication.translate("NFe_Frame", "Salvar", None, QtGui.QApplication.UnicodeUTF8))
@@ -60,11 +106,8 @@ class Ui_NFe_Frame(QtGui.QWidget):
         self.Label.setText(QtGui.QApplication.translate("NFe_Frame", "Arquivo NFe", None, QtGui.QApplication.UnicodeUTF8))
         self.UploadButton.setText(QtGui.QApplication.translate("NFe_Frame", "Upload", None, QtGui.QApplication.UnicodeUTF8))
 
-        def selectFile():
-            filename = QFileDialog.getOpenFileName(parent=self, caption='Open file', dir='.', filter='*.XML')
-            self.FilePath_Entry.setText(filename)
-
-        self.UploadButton.clicked.connect(selectFile)
+        self.UploadButton.clicked.connect(self.selectFile)
+        self.SalvarButton.clicked.connect(self.submitNFe)
 
 
 if __name__ == "__main__":
