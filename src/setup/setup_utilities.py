@@ -9,8 +9,8 @@ def insertTable(tableName,inHeaders,inData,cursor):
     parenthesis = '''(''' + '''?,''' * (nColumns-1) + '''?)'''
     targets = tableName + '''('''
     for i in range(nColumns-1):
-        targets = targets + inHeaders[i] + ''','''
-    targets = targets + inHeaders[-1] + ''')'''
+        targets += inHeaders[i] + ''','''
+    targets += inHeaders[-1] + ''')'''
     commandString = '''INSERT INTO ''' + targets + ''' VALUES''' + parenthesis
     cursor.executemany(commandString,inData)
 
@@ -21,9 +21,9 @@ def selectTable(tableName,inHeaders,cursor):
     for i in range(nColumns-1):
         header = inHeaders[i]
         outDict[header] = []
-        targets = targets + header + ''', '''
+        targets += header + ''', '''
     outDict[inHeaders[-1]] = []
-    targets = targets + inHeaders[-1]
+    targets += inHeaders[-1]
 
     commandString = '''SELECT ''' + targets + ''' FROM ''' + tableName
 
@@ -35,3 +35,13 @@ def selectTable(tableName,inHeaders,cursor):
             outDict[inHeaders[i]].append(row[i])
 
     return outDict
+
+def findHeader(allTables,target):
+    foundCount = 0
+    for key in allTables:
+        table = allTables[key]
+        fields = list(table.fields.keys())
+        for field in fields:
+            if target == field:
+                return table.name
+    return None

@@ -2,17 +2,17 @@ def createTableCommand(tableObj):
     createCommand = '''CREATE TABLE IF NOT EXISTS'''
 
     tableName = tableObj.name
-    createCommand = createCommand + ''' ''' + tableName + '''('''
+    createCommand += ''' ''' + tableName + '''('''
 
     fieldName = list(tableObj.fields.keys())
     fLen = len(fieldName)
     for i in range(fLen):
         fName = fieldName[i]
         line = ''' '''
-        line = line + fName + ''' '''
-        line = line + tableObj.fields[fName]
+        line += fName + ''' '''
+        line += tableObj.fields[fName]
         if i != fLen-1:
-            line = line + ''','''
+            line += ''','''
         createCommand = createCommand + line
 
     foreignTables = list(tableObj.foreignkeys.keys())
@@ -20,12 +20,14 @@ def createTableCommand(tableObj):
     for i in range(ftLen):
         line = ''', '''
         ftName = foreignTables[i]
-        fkName = tableObj.foreignkeys[ftName]
-        line = line + '''FOREIGN KEY (''' + fkName + ''')'''
-        line = line + ''' REFERENCES ''' + ftName + '''(''' + fkName + ''')'''
+        fkLocal = tableObj.foreignkeys[ftName][0]
+        fkForeign = tableObj.foreignkeys[ftName][1]
+        #fkName = tableObj.foreignkeys[ftName]
+        line += '''FOREIGN KEY (''' + fkLocal + ''')'''
+        line += ''' REFERENCES ''' + ftName + '''(''' + fkForeign + ''')'''
         createCommand = createCommand + line
 
-    createCommand = createCommand + ''')'''
+    createCommand += ''')'''
 
     #print(createCommand)
     return createCommand

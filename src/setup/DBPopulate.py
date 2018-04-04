@@ -10,7 +10,7 @@ def readProducts(filename):
     filecsv.close()
     productsDF = productsDF.infer_objects()
     productsDF.Registro = pd.to_numeric(productsDF.Registro, errors='coerce').fillna(0).astype('int64')
-    productsDF.EAN = productsDF.EAN.fillna(0).astype('int64')
+    productsDF.ProdEAN = productsDF.ProdEAN.fillna(0).astype('int64')
     return productsDF
 
 def populateProducts(cursor):
@@ -45,9 +45,9 @@ def replaceProductsCols(productsDF,cursor):
     headers = ['ListaTribID', 'ListDescription']
     listDict = utils.selectTable(tb.listTribTable.name,headers,cursor)
 
-    productsDF.LabID = productsDF.LabID.replace(to_replace=labDict['LabName'],value=labDict['LabID'])
-    productsDF.TeraClassID = productsDF.TeraClassID.replace(to_replace=teraDict['TeraClassFull'],value=teraDict['TeraClassID'])
-    productsDF.ListaTribID = productsDF.ListaTribID.replace(to_replace=listDict['ListDescription'],value=listDict['ListaTribID'])
+    productsDF.ProdLabID = productsDF.ProdLabID.replace(to_replace=labDict['LabName'],value=labDict['LabID'])
+    productsDF.ProdTeraClassID = productsDF.ProdTeraClassID.replace(to_replace=teraDict['TeraClassFull'],value=teraDict['TeraClassID'])
+    productsDF.ProdListaTribID = productsDF.ProdListaTribID.replace(to_replace=listDict['ListDescription'],value=listDict['ListaTribID'])
 
     #productsDF.AnalRecur = productsDF.AnalRecur.fillna(value=0) #Ha apenas Sim e NaN na coluna
     #productsDF.Comerc2016 = pd.to_numeric(productsDF.Comerc2016, errors='coerce').astype('int64') #Ha Sim, Nao e NaN na coluna

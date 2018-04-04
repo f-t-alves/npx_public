@@ -4,6 +4,32 @@ class SQLTable:
         self.fields = {}
         self.foreignkeys = {}
 
+def findLink(inTable):
+    tableLinks = {}
+    linkedTables = list(inTable.foreignkeys.keys())
+    for key in linkedTables:
+        fkLocal = inTable.foreignkeys[key][0]
+        fkForeign = inTable.foreignkeys[key][1]
+        sortList = [inTable.name,key]
+        sortList.sort()
+        linkKey = sortList[0] + '-' + sortList[1]
+        tableLinks[linkKey] = sortList[0] + '''.''' + fkLocal + ''' = ''' + sortList[1] + '''.''' + fkForeign
+    return tableLinks
+
+def findAllLinks(allTables):
+    tempDict = {}
+    allLinks = {}
+    for tableKey in allTables:
+        table = allTables[tableKey]
+        tempDict = findLink(table)
+        for key in tempDict:
+            allLinks[key] = tempDict[key]
+    return allLinks
+
+
+allTables = {}
+allLinks = {}
+
 labsTable = SQLTable()
 labsTable.name = 'Laboratories'
 labsTable.fields['LabID'] = 'INTEGER PRIMARY KEY NOT NULL'
@@ -15,6 +41,8 @@ labsTable.fields['LabContactEmail2'] = 'TEXT'
 labsTable.fields['LabContactPhone1'] = 'TEXT'
 labsTable.fields['LabContactPhone2'] = 'TEXT'
 labsTable.fields['LabContactFax'] = 'TEXT'
+
+allTables[labsTable.name] = labsTable
 
 provsTable = SQLTable()
 provsTable.name = 'ProviderCompany'
@@ -28,6 +56,8 @@ provsTable.fields['ProvContactPhone1'] = 'TEXT'
 provsTable.fields['ProvContactPhone2'] = 'TEXT'
 provsTable.fields['ProvContactFax'] = 'TEXT'
 
+allTables[provsTable.name] = provsTable
+
 teraClassTable = SQLTable()
 teraClassTable.name = 'TerapeuticClass'
 teraClassTable.fields['TeraClassRowID'] = 'INTEGER PRIMARY KEY NOT NULL'
@@ -35,10 +65,14 @@ teraClassTable.fields['TeraClassID'] = 'TEXT UNIQUE'
 teraClassTable.fields['TeraClassDescription'] = 'TEXT'
 teraClassTable.fields['TeraClassFull'] = 'TEXT'
 
+allTables[teraClassTable.name] = teraClassTable
+
 listTribTable = SQLTable()
 listTribTable.name = 'ListaTributaria'
 listTribTable.fields['ListaTribID'] = 'INTEGER PRIMARY KEY NOT NULL'
 listTribTable.fields['ListDescription'] = 'TEXT NOT NULL'
+
+allTables[listTribTable.name] = listTribTable
 
 NFeTable = SQLTable()
 NFeTable.name = 'NFeControl'
@@ -49,28 +83,32 @@ NFeTable.fields['DueTotal'] = 'REAL'
 NFeTable.fields['TaxTotal'] = 'REAL'
 NFeTable.fields['XMLFile'] = 'TEXT NOT NULL'
 
+allTables[NFeTable.name] = NFeTable
+
 stockTable = SQLTable()
 stockTable.name = 'StockControl'
 stockTable.fields['StockID'] = 'INTEGER PRIMARY KEY NOT NULL'
-stockTable.fields['EAN'] = 'INTEGER NOT NULL'
-stockTable.fields['LotNumber'] = 'TEXT'
-stockTable.fields['Quantity'] = 'INTEGER NOT NULL'
-stockTable.fields['Location1'] = 'TEXT'
-stockTable.fields['Location2'] = 'TEXT'
-stockTable.fields['ManufactureDate'] = 'TEXT'
-stockTable.fields['ExpireDate'] = 'TEXT'
-stockTable.foreignkeys['Products'] = 'EAN'
+stockTable.fields['StockEAN'] = 'INTEGER NOT NULL'
+stockTable.fields['StockLotNumber'] = 'TEXT'
+stockTable.fields['StockQuantity'] = 'INTEGER NOT NULL'
+stockTable.fields['StockLocation1'] = 'TEXT'
+stockTable.fields['StockLocation2'] = 'TEXT'
+stockTable.fields['StockManufactureDate'] = 'TEXT'
+stockTable.fields['StockExpireDate'] = 'TEXT'
+stockTable.foreignkeys['Products'] = ['StockEAN','ProdEAN']
+
+allTables[stockTable.name] = stockTable
 
 prodsTable = SQLTable()
 prodsTable.name = 'Products'
-prodsTable.fields['EAN'] = 'INTEGER PRIMARY KEY NOT NULL'
+prodsTable.fields['ProdEAN'] = 'INTEGER PRIMARY KEY NOT NULL'
 prodsTable.fields['ProdName'] = 'TEXT NOT NULL'
-prodsTable.fields['LabID'] = 'INTEGER NOT NULL'
+prodsTable.fields['ProdLabID'] = 'INTEGER NOT NULL'
 prodsTable.fields['PrinAtivo'] = 'TEXT NOT NULL'
 prodsTable.fields['CodGGREM'] = 'INTEGER NOT NULL'
 prodsTable.fields['Registro'] = 'INTEGER NOT NULL'
 prodsTable.fields['ProdDescription'] = 'TEXT NOT NULL'
-prodsTable.fields['TeraClassID'] = 'INTEGER'
+prodsTable.fields['ProdTeraClassID'] = 'INTEGER'
 prodsTable.fields['ProdType'] = 'TEXT NOT NULL'
 prodsTable.fields['PF0p'] = 'TEXT'
 prodsTable.fields['PF12p'] = 'REAL'
@@ -94,9 +132,13 @@ prodsTable.fields['RestHosp'] = 'INTEGER NOT NULL'
 prodsTable.fields['CAP'] = 'INTEGER NOT NULL'
 prodsTable.fields['CONFAZ87'] = 'INTEGER NOT NULL'
 prodsTable.fields['AnalRecur'] = 'INTEGER'
-prodsTable.fields['ListaTribID'] = 'INTEGER NOT NULL'
+prodsTable.fields['ProdListaTribID'] = 'INTEGER NOT NULL'
 prodsTable.fields['Comerc2016'] = 'INTEGER'
 prodsTable.fields['Tarja'] = 'TEXT NOT NULL'
-prodsTable.foreignkeys[labsTable.name] = 'LabID'
-prodsTable.foreignkeys[teraClassTable.name] = 'TeraClassID'
-prodsTable.foreignkeys[listTribTable.name] = 'ListaTribID'
+prodsTable.foreignkeys[labsTable.name] = ['ProdLabID','LabID']
+prodsTable.foreignkeys[teraClassTable.name] = ['ProdTeraClassID','TeraClassID']
+prodsTable.foreignkeys[listTribTable.name] = ['ProdListaTribID','ListaTribID']
+
+allTables[prodsTable.name] = prodsTable
+
+allLinks = findAllLinks(allTables)
