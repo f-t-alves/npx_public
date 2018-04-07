@@ -1,11 +1,14 @@
+import traceback
 from src.setup.DBCreate import *
 from src.setup.DBPopulate import *
-import traceback
+from  src.setup import SQLTables as tb
 
 def createDB(db):
     cursor = db.cursor()
+
+    command = createTableCommand(tb.labsTable)
     try:
-        createLaboratoryTable(cursor)
+        cursor.execute(command)
         db.commit()
         print('Laboratory table created')
     except Exception as e:
@@ -13,8 +16,9 @@ def createDB(db):
         print('Laboratory table failed')
         traceback.print_exc()
 
+    command = createTableCommand(tb.provsTable)
     try:
-        createProviderTable(cursor)
+        cursor.execute(command)
         db.commit()
         print('Provider table created')
     except Exception as e:
@@ -22,8 +26,9 @@ def createDB(db):
         print('Provider table failed')
         traceback.print_exc()
 
+    command = createTableCommand(tb.teraClassTable)
     try:
-        createTerapeuticClassTable(cursor)
+        cursor.execute(command)
         db.commit()
         print('TeraClass table created')
     except Exception as e:
@@ -31,8 +36,9 @@ def createDB(db):
         print('TeraClass table failed')
         traceback.print_exc()
 
+    command = createTableCommand(tb.listTribTable)
     try:
-        createListaTributaria(cursor)
+        cursor.execute(command)
         db.commit()
         print('ListaTributaria table created')
     except Exception as e:
@@ -40,8 +46,9 @@ def createDB(db):
         print('ListaTributaria table failed')
         traceback.print_exc()
 
+    command = createTableCommand(tb.prodsTable)
     try:
-        createProductTable(cursor)
+        cursor.execute(command)
         db.commit()
         print('Product table created')
     except Exception as e:
@@ -49,8 +56,9 @@ def createDB(db):
         print('Product table failed')
         traceback.print_exc()
 
+    command = createTableCommand(tb.stockTable)
     try:
-        createStockTable(cursor)
+        cursor.execute(command)
         db.commit()
         print('Stock table created')
     except Exception as e:
@@ -58,8 +66,9 @@ def createDB(db):
         print('Stock table failed')
         traceback.print_exc()
 
+    command = createTableCommand(tb.NFeTable)
     try:
-        createNFeTable(cursor)
+        cursor.execute(command)
         db.commit()
         print('NFe table created')
     except Exception as e:
