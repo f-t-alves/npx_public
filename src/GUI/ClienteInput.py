@@ -222,7 +222,7 @@ class Ui_ClienteFrame(QtGui.QWidget):
         self.Contato.setText(QtGui.QApplication.translate("ClienteFrame", "Contato:", None, QtGui.QApplication.UnicodeUTF8))
         self.Endereco.setText(QtGui.QApplication.translate("ClienteFrame", "Endereço:", None, QtGui.QApplication.UnicodeUTF8))
 
-import npx_rc
+from src.GUI import npx_rc
 
 if __name__ == "__main__":
     import sys

@@ -132,7 +132,7 @@ class Ui_DistInput(QtGui.QWidget):
         self.SalvarButton.setText(QtGui.QApplication.translate("DistInput", "Salvar", None, QtGui.QApplication.UnicodeUTF8))
         self.TitleLabel.setText(QtGui.QApplication.translate("DistInput", "<html><head/><body><p align=\"center\">Cadastro de Distribuidores</p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
 
-import npx_rc
+from src.GUI import npx_rc
 
 if __name__ == "__main__":
     import sys

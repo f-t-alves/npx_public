@@ -1,5 +1,5 @@
 import traceback
-from src.GUI import MainApp as MaP
+#from src.GUI import MainApp as MaP
 
 def inputNFe2DB(inDict,db):
     cursor = db.cursor()

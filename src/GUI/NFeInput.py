@@ -11,8 +11,8 @@ from PySide import QtCore, QtGui
 from PySide.QtGui import QFileDialog
 
 import sqlite3
-from inputNFe import inputNFe2DB as iNFe
-from inputNFe import readNFe as rNFe
+from src.inputNFe import inputNFe2DB as iNFe
+from src.inputNFe import readNFe as rNFe
 from config import dbPath
 
 class Ui_NFe_Frame(QtGui.QWidget):

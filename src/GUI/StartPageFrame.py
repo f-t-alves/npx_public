@@ -861,7 +861,7 @@ class Ui_StartPage(QtGui.QWidget):
         self.Transf_Button.setText(QtGui.QApplication.translate("StartPage", "Transferência", None, QtGui.QApplication.UnicodeUTF8))
         self.label.setText(QtGui.QApplication.translate("StartPage", "<html><head/><body><p><img src=\":/NPX ICO/clinic (2).png\"/></p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
 
-import npx_rc
+from src.GUI import npx_rc
 
 if __name__ == "__main__":
     import sys

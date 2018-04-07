@@ -8,13 +8,13 @@
 # WARNING! All changes made in this file will be lost!
 
 from PySide import QtCore, QtGui
-from InputFrame import Ui_InputPage
-from StartPageFrame import Ui_StartPage
-from NFeInput import Ui_NFe_Frame
-from LabInput import Ui_LabInput
-from DistInput import Ui_DistInput
-from ClienteInput import Ui_ClienteFrame
-from SearchBox import Ui_SearchBoxAlfa
+from src.GUI.InputFrame import Ui_InputPage
+from src.GUI.StartPageFrame import Ui_StartPage
+from src.GUI.NFeInput import Ui_NFe_Frame
+from src.GUI.LabInput import Ui_LabInput
+from src.GUI.DistInput import Ui_DistInput
+from src.GUI.ClienteInput import Ui_ClienteFrame
+from src.GUI.SearchBox import Ui_SearchBoxAlfa
 
 
 class Ui_MainWindow(object):
@@ -147,7 +147,7 @@ class Ui_MainWindow(object):
 
 
 
-import npx_rc
+from src.GUI import npx_rc
 
 if __name__ == "__main__":
     import sys

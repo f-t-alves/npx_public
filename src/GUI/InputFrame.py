@@ -1072,7 +1072,7 @@ class Ui_InputPage(QtGui.QWidget):
         self.pushButton_5.setText(QtGui.QApplication.translate("parent", "Whatvs2", None, QtGui.QApplication.UnicodeUTF8))
         self.pushButton_8.setText(QtGui.QApplication.translate("parent", "Whatvs4", None, QtGui.QApplication.UnicodeUTF8))
 
-import npx_rc
+from src.GUI import npx_rc
 
 if __name__ == "__main__":
     import sys

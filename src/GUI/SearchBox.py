@@ -123,7 +123,7 @@ class Ui_SearchBoxAlfa(QtGui.QWidget):
         self.EditButton.setText(QtGui.QApplication.translate("SearchBoxAlfa", "Editar", None, QtGui.QApplication.UnicodeUTF8))
         self.ExitButton.setText(QtGui.QApplication.translate("SearchBoxAlfa", "Exit", None, QtGui.QApplication.UnicodeUTF8))
 
-import npx_rc
+from src.GUI import npx_rc
 
 if __name__ == "__main__":
     import sys
