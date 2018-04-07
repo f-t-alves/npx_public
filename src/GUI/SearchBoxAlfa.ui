@@ -171,17 +171,17 @@
             </attribute>
             <column>
              <property name="text">
-              <string>Lab ID</string>
+              <string>Header 1</string>
              </property>
             </column>
             <column>
              <property name="text">
-              <string>Lab Name</string>
+              <string>Header 2 </string>
              </property>
             </column>
             <column>
              <property name="text">
-              <string>Lab CNPJ</string>
+              <string>Header 3</string>
              </property>
             </column>
            </widget>
@@ -227,9 +227,9 @@
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="PlaceHolderButton">
+        <widget class="QPushButton" name="EditButton">
          <property name="text">
-          <string>Whatvs</string>
+          <string>Editar</string>
          </property>
         </widget>
        </item>

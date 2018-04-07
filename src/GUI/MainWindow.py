@@ -14,6 +14,7 @@ from NFeInput import Ui_NFe_Frame
 from LabInput import Ui_LabInput
 from DistInput import Ui_DistInput
 from ClienteInput import Ui_ClienteFrame
+from SearchBox import Ui_SearchBoxAlfa
 
 
 class Ui_MainWindow(object):
@@ -30,7 +31,6 @@ class Ui_MainWindow(object):
 
 
         self.frames = {}
-
 
         for F in (Ui_StartPage,Ui_InputPage,Ui_NFe_Frame,Ui_LabInput,Ui_DistInput,Ui_ClienteFrame):
 
@@ -104,6 +104,32 @@ class Ui_MainWindow(object):
             frame = self.frames[ctrl]
             frame.setVisible(True)
 
+
+        def SearchBoxType(target): #CRIAR IF PRA RAISE START PAGE E TORNAR A FRAME INVISIBLE
+
+            if target != None:
+
+                for F in self.frames:
+                    self.frames[F].setVisible(False)
+                AppendVar = Ui_SearchBoxAlfa(self.centralwidget,target)
+                self.frames[Ui_SearchBoxAlfa] = AppendVar
+                self.gridLayout.addWidget(AppendVar, 0, 0, 1, 1)
+                self.frames[Ui_SearchBoxAlfa].setVisible(True)
+                self.frames[Ui_SearchBoxAlfa].ExitButton.clicked.connect(lambda: SearchBoxType(None) )
+
+
+            else:
+
+                self.frames[Ui_SearchBoxAlfa].setVisible(False)
+                del self.frames[Ui_SearchBoxAlfa]
+                self.frames[Ui_StartPage].setVisible(True)
+
+
+
+
+
+
+
         # Bloco com os comandos que dão link entre as frames
 
         self.frames[Ui_StartPage].Produto_Button.clicked.connect(lambda: show_frame(Ui_InputPage) )
@@ -111,11 +137,13 @@ class Ui_MainWindow(object):
         self.frames[Ui_StartPage].Laboratorios_Button.clicked.connect(lambda: show_frame(Ui_LabInput) )
         self.frames[Ui_StartPage].Distribuidor_Button.clicked.connect(lambda: show_frame(Ui_DistInput) )
         self.frames[Ui_StartPage].Clientes_Button.clicked.connect(lambda: show_frame(Ui_ClienteFrame) )
+        self.frames[Ui_StartPage].LabCons_Button.clicked.connect(lambda: SearchBoxType(0) )
         self.frames[Ui_InputPage].Back_Button.clicked.connect(lambda: show_frame(Ui_StartPage) )
         self.frames[Ui_NFe_Frame].CancelarButton.clicked.connect(lambda: show_frame(Ui_StartPage) )
         self.frames[Ui_LabInput].CancelarButton.clicked.connect(lambda: show_frame(Ui_StartPage) )
         self.frames[Ui_DistInput].CancelarButton.clicked.connect(lambda: show_frame(Ui_StartPage) )
         self.frames[Ui_ClienteFrame].Cancelar_Button.clicked.connect(lambda: show_frame(Ui_StartPage) )
+
 
 
 

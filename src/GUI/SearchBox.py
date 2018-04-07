@@ -2,23 +2,18 @@
 
 # Form implementation generated from reading ui file 'C:\Users\guilh\Desktop\NewPharmaExperience\npx_mock\src\GUI\SearchBoxAlfa.ui'
 #
-# Created: Mon Apr  2 00:21:16 2018
+# Created: Fri Apr  6 00:36:29 2018
 #      by: pyside-uic 0.2.15 running on PySide 1.2.4
 #
 # WARNING! All changes made in this file will be lost!
 
 from PySide import QtCore, QtGui
 
-class Ui_SearchBoxAlfa(object):
-    def setupUi(self, SearchBoxAlfa):
-        SearchBoxAlfa.setObjectName("SearchBoxAlfa")
-        SearchBoxAlfa.resize(971, 647)
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(":/NPX ICO/clinic.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        SearchBoxAlfa.setWindowIcon(icon)
-        SearchBoxAlfa.setFrameShape(QtGui.QFrame.StyledPanel)
-        SearchBoxAlfa.setFrameShadow(QtGui.QFrame.Sunken)
-        self.gridLayout_2 = QtGui.QGridLayout(SearchBoxAlfa)
+class Ui_SearchBoxAlfa(QtGui.QWidget):
+    def __init__(self, master, target):
+        SearchTargetTable = target
+        QtGui.QWidget.__init__(self,master)
+        self.gridLayout_2 = QtGui.QGridLayout(self)
         self.gridLayout_2.setObjectName("gridLayout_2")
         self.verticalLayout_2 = QtGui.QVBoxLayout()
         self.verticalLayout_2.setObjectName("verticalLayout_2")
@@ -28,20 +23,20 @@ class Ui_SearchBoxAlfa(object):
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.gridLayout = QtGui.QGridLayout()
         self.gridLayout.setObjectName("gridLayout")
-        self.EntrySearch = QtGui.QLineEdit(SearchBoxAlfa)
+        self.EntrySearch = QtGui.QLineEdit(self)
         self.EntrySearch.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
         self.EntrySearch.setObjectName("EntrySearch")
         self.gridLayout.addWidget(self.EntrySearch, 0, 1, 1, 1)
-        self.FiliaisCheckBox = QtGui.QCheckBox(SearchBoxAlfa)
+        self.FiliaisCheckBox = QtGui.QCheckBox(self)
         self.FiliaisCheckBox.setObjectName("FiliaisCheckBox")
         self.gridLayout.addWidget(self.FiliaisCheckBox, 1, 1, 1, 1)
-        self.LabelText = QtGui.QLabel(SearchBoxAlfa)
+        self.LabelText = QtGui.QLabel(self)
         self.LabelText.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
         self.LabelText.setMargin(0)
         self.LabelText.setIndent(20)
         self.LabelText.setObjectName("LabelText")
         self.gridLayout.addWidget(self.LabelText, 0, 0, 1, 1)
-        self.SearchButton = QtGui.QPushButton(SearchBoxAlfa)
+        self.SearchButton = QtGui.QPushButton(self)
         self.SearchButton.setStyleSheet("image: url(:/NPX ICO/search.png);")
         self.SearchButton.setText("")
         icon1 = QtGui.QIcon()
@@ -52,14 +47,14 @@ class Ui_SearchBoxAlfa(object):
         spacerItem = QtGui.QSpacerItem(40, 20, QtGui.QSizePolicy.Fixed, QtGui.QSizePolicy.Minimum)
         self.gridLayout.addItem(spacerItem, 0, 3, 1, 1)
         self.horizontalLayout_2.addLayout(self.gridLayout)
-        self.ImageSymbol = QtGui.QLabel(SearchBoxAlfa)
+        self.ImageSymbol = QtGui.QLabel(self)
         self.ImageSymbol.setAlignment(QtCore.Qt.AlignCenter)
         self.ImageSymbol.setObjectName("ImageSymbol")
         self.horizontalLayout_2.addWidget(self.ImageSymbol)
         spacerItem1 = QtGui.QSpacerItem(40, 20, QtGui.QSizePolicy.Fixed, QtGui.QSizePolicy.Minimum)
         self.horizontalLayout_2.addItem(spacerItem1)
         self.verticalLayout.addLayout(self.horizontalLayout_2)
-        self.Panel = QtGui.QGroupBox(SearchBoxAlfa)
+        self.Panel = QtGui.QGroupBox(self)
         self.Panel.setObjectName("Panel")
         self.horizontalLayout_4 = QtGui.QHBoxLayout(self.Panel)
         self.horizontalLayout_4.setObjectName("horizontalLayout_4")
@@ -93,24 +88,24 @@ class Ui_SearchBoxAlfa(object):
         self.horizontalLayout.setObjectName("horizontalLayout")
         spacerItem2 = QtGui.QSpacerItem(40, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
         self.horizontalLayout.addItem(spacerItem2)
-        self.SubmitButton = QtGui.QPushButton(SearchBoxAlfa)
+        self.SubmitButton = QtGui.QPushButton(self)
         self.SubmitButton.setMaximumSize(QtCore.QSize(127, 16777215))
         self.SubmitButton.setObjectName("SubmitButton")
         self.horizontalLayout.addWidget(self.SubmitButton)
-        self.ClearButton = QtGui.QPushButton(SearchBoxAlfa)
+        self.ClearButton = QtGui.QPushButton(self)
         self.ClearButton.setObjectName("ClearButton")
         self.horizontalLayout.addWidget(self.ClearButton)
-        self.PlaceHolderButton = QtGui.QPushButton(SearchBoxAlfa)
-        self.PlaceHolderButton.setObjectName("PlaceHolderButton")
-        self.horizontalLayout.addWidget(self.PlaceHolderButton)
-        self.ExitButton = QtGui.QPushButton(SearchBoxAlfa)
+        self.EditButton = QtGui.QPushButton(self)
+        self.EditButton.setObjectName("EditButton")
+        self.horizontalLayout.addWidget(self.EditButton)
+        self.ExitButton = QtGui.QPushButton(self)
         self.ExitButton.setObjectName("ExitButton")
         self.horizontalLayout.addWidget(self.ExitButton)
         self.verticalLayout_2.addLayout(self.horizontalLayout)
         self.gridLayout_2.addLayout(self.verticalLayout_2, 0, 0, 1, 1)
 
-        self.retranslateUi(SearchBoxAlfa)
-        QtCore.QMetaObject.connectSlotsByName(SearchBoxAlfa)
+        self.retranslateUi(self)
+        QtCore.QMetaObject.connectSlotsByName(self)
 
     def retranslateUi(self, SearchBoxAlfa):
         SearchBoxAlfa.setWindowTitle(QtGui.QApplication.translate("SearchBoxAlfa", "Search", None, QtGui.QApplication.UnicodeUTF8))
@@ -120,12 +115,12 @@ class Ui_SearchBoxAlfa(object):
         self.ImageSymbol.setText(QtGui.QApplication.translate("SearchBoxAlfa", "<html><head/><body><p><img src=\":/NPX ICO/clinic (2).png\"/></p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
         self.Panel.setTitle(QtGui.QApplication.translate("SearchBoxAlfa", "Results", None, QtGui.QApplication.UnicodeUTF8))
         self.ResultTable.setSortingEnabled(True)
-        self.ResultTable.horizontalHeaderItem(0).setText(QtGui.QApplication.translate("SearchBoxAlfa", "Lab ID", None, QtGui.QApplication.UnicodeUTF8))
-        self.ResultTable.horizontalHeaderItem(1).setText(QtGui.QApplication.translate("SearchBoxAlfa", "Lab Name", None, QtGui.QApplication.UnicodeUTF8))
-        self.ResultTable.horizontalHeaderItem(2).setText(QtGui.QApplication.translate("SearchBoxAlfa", "Lab CNPJ", None, QtGui.QApplication.UnicodeUTF8))
+        self.ResultTable.horizontalHeaderItem(0).setText(QtGui.QApplication.translate("SearchBoxAlfa", "Header 1", None, QtGui.QApplication.UnicodeUTF8))
+        self.ResultTable.horizontalHeaderItem(1).setText(QtGui.QApplication.translate("SearchBoxAlfa", "Header 2 ", None, QtGui.QApplication.UnicodeUTF8))
+        self.ResultTable.horizontalHeaderItem(2).setText(QtGui.QApplication.translate("SearchBoxAlfa", "Header 3", None, QtGui.QApplication.UnicodeUTF8))
         self.SubmitButton.setText(QtGui.QApplication.translate("SearchBoxAlfa", "Submit", None, QtGui.QApplication.UnicodeUTF8))
         self.ClearButton.setText(QtGui.QApplication.translate("SearchBoxAlfa", "Clear", None, QtGui.QApplication.UnicodeUTF8))
-        self.PlaceHolderButton.setText(QtGui.QApplication.translate("SearchBoxAlfa", "Whatvs", None, QtGui.QApplication.UnicodeUTF8))
+        self.EditButton.setText(QtGui.QApplication.translate("SearchBoxAlfa", "Editar", None, QtGui.QApplication.UnicodeUTF8))
         self.ExitButton.setText(QtGui.QApplication.translate("SearchBoxAlfa", "Exit", None, QtGui.QApplication.UnicodeUTF8))
 
 import npx_rc
@@ -138,4 +133,3 @@ if __name__ == "__main__":
     ui.setupUi(SearchBoxAlfa)
     SearchBoxAlfa.show()
     sys.exit(app.exec_())
-
