@@ -8,12 +8,14 @@ def findLink(inTable):
     tableLinks = {}
     linkedTables = list(inTable.foreignkeys.keys())
     for key in linkedTables:
-        fkLocal = inTable.foreignkeys[key][0]
-        fkForeign = inTable.foreignkeys[key][1]
+        fks = {}
+        tName = inTable.name
+        fks[tName] = inTable.foreignkeys[key][0]
+        fks[key] = inTable.foreignkeys[key][1]
         sortList = [inTable.name,key]
         sortList.sort()
         linkKey = sortList[0] + '-' + sortList[1]
-        tableLinks[linkKey] = sortList[0] + '''.''' + fkLocal + ''' = ''' + sortList[1] + '''.''' + fkForeign
+        tableLinks[linkKey] = sortList[0] + '''.''' + fks[sortList[0]] + ''' = ''' + sortList[1] + '''.''' + fks[sortList[1]]
     return tableLinks
 
 def findAllLinks(allTables):
