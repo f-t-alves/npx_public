@@ -4,8 +4,16 @@ def readCSV(filecsv):
     reader = pd.read_csv(filecsv,na_values=None,encoding='utf-8')
     return reader
 
-def selectQuery(commandString,cursor):
+def selectQuery(commandString,inHeaders,cursor):
     outDict = {}
+    nColumns = len(inHeaders)
+
+    for i in range(nColumns-1):
+        header = inHeaders[i]
+        outDict[header] = []
+    outDict[inHeaders[-1]] = []
+
+    cursor.execute(commandString)
     all_rows = cursor.fetchall()
     for row in all_rows:
         index = row[0]
@@ -29,14 +37,13 @@ def selectTable(tableName,inHeaders,cursor):
     nColumns = len(inHeaders)
     for i in range(nColumns-1):
         header = inHeaders[i]
-        outDict[header] = []
         targets += header + ''', '''
-    outDict[inHeaders[-1]] = []
     targets += inHeaders[-1]
 
     commandString = '''SELECT ''' + targets + ''' FROM ''' + tableName
+    print(commandString)
 
-    outDict = selectQuery(commandString,cursor)
+    outDict = selectQuery(commandString,inHeaders,cursor)
 
     return outDict
 
@@ -127,7 +134,10 @@ def advancedSelect(allTables,allLinks,headerDict,cursor):
         val = whereDict[key]['values']
         if len(val)>0:
             if op == 'equal':
-                whereString += ''' ''' + key + ''' LIKE ''' + str(val[0]) + ''' AND '''
+                addVal = val[0]
+                if type(addVal) == type('string'):
+                    addVal = '''\'''' + addVal + '''\''''
+                whereString += ''' ''' + key + ''' LIKE ''' + str(addVal) + ''' AND '''
             elif op == 'greater':
                 whereString += ''' ''' + key + ''' > ''' + str(val[0]) + ''' AND '''
             elif op == 'less':
@@ -155,6 +165,6 @@ def advancedSelect(allTables,allLinks,headerDict,cursor):
 
     commandString = selectString + fromString + whereString
 
-    outDict = selectQuery(commandString,cursor)
+    outDict = selectQuery(commandString,selectList,cursor)
 
     return outDict
