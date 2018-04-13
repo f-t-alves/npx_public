@@ -61,8 +61,32 @@ provInDict =  {
             "HeadName":"ProvCompName",
             "HeadWidth":250
         },
+        "CNPJ":{
+            "HeadName":"ProvCompCNPJ",
+            "HeadWidth":150
+        },
+        "Endereço":{
+            "HeadName":"ProvCompAddress",
+            "HeadWidth":400
+        },
+        "Telefone 1":{
+            "HeadName":"ProvCompPhone1",
+            "HeadWidth":150
+        },
+        "Telefone 2":{
+            "HeadName":"ProvCompPhone2",
+            "HeadWidth":150
+        },
+        "E-Mail 1":{
+            "HeadName":"ProvCompEmail1",
+            "HeadWidth":300
+        },
+        "E-Mail 2":{
+            "HeadName":"ProvCompEmail2",
+            "HeadWidth":300
+        },
         "Fax":{
-            "HeadName":"ProvContactFax",
+            "HeadName":"ProvCompFax",
             "HeadWidth":150
         }
     },

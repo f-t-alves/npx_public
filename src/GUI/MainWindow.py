@@ -106,22 +106,11 @@ class Ui_MainWindow(object):
             frame.setVisible(True)
 
 
-        def LabCons():
-
-            inDict =  labInDict
+        def ConsCreateFunc(inDict):
 
             self.frames[Ui_SearchBoxAlfa].BuildWidget(inDict)
 
             show_frame(Ui_SearchBoxAlfa)
-
-        def DistCons():
-
-            inDict = provInDict
-
-            self.frames[Ui_SearchBoxAlfa].BuildWidget(inDict)
-
-            show_frame(Ui_SearchBoxAlfa)
-
 
 
         # Bloco com os comandos que dão link entre as frames
@@ -131,8 +120,8 @@ class Ui_MainWindow(object):
         self.frames[Ui_StartPage].Laboratorios_Button.clicked.connect(lambda: show_frame(Ui_LabInput) )
         self.frames[Ui_StartPage].Distribuidor_Button.clicked.connect(lambda: show_frame(Ui_DistInput) )
         self.frames[Ui_StartPage].Clientes_Button.clicked.connect(lambda: show_frame(Ui_ClienteFrame) )
-        self.frames[Ui_StartPage].LabCons_Button.clicked.connect(LabCons)
-        self.frames[Ui_StartPage].DistCons_Button.clicked.connect(DistCons)
+        self.frames[Ui_StartPage].LabCons_Button.clicked.connect(lambda: ConsCreateFunc(labInDict))
+        self.frames[Ui_StartPage].DistCons_Button.clicked.connect(lambda: ConsCreateFunc(provInDict))
         self.frames[Ui_SearchBoxAlfa].SearchButton.clicked.connect(lambda: self.frames[Ui_SearchBoxAlfa].SelectCall())
         self.frames[Ui_InputPage].Back_Button.clicked.connect(lambda: show_frame(Ui_StartPage) )
         self.frames[Ui_NFe_Frame].CancelarButton.clicked.connect(lambda: show_frame(Ui_StartPage) )
