@@ -32,7 +32,7 @@ class Ui_MainWindow(object):
 
         self.frames = {}
 
-        for F in (Ui_StartPage,Ui_InputPage,Ui_NFe_Frame,Ui_LabInput,Ui_DistInput,Ui_ClienteFrame):
+        for F in (Ui_StartPage,Ui_InputPage,Ui_NFe_Frame,Ui_LabInput,Ui_DistInput,Ui_ClienteFrame,Ui_SearchBoxAlfa):
 
             Frame = F(self.centralwidget)
 
@@ -105,28 +105,95 @@ class Ui_MainWindow(object):
             frame.setVisible(True)
 
 
-        def SearchBoxType(target): #CRIAR IF PRA RAISE START PAGE E TORNAR A FRAME INVISIBLE
+        def LabCons():
 
-            if target != None:
+            inDict =  {
+                "Headers":{
+                    "ID":{
+                        "HeadName":"LabID",
+                        "HeadWidth":50
+                    },
+                    "Nome":{
+                        "HeadName":"LabName",
+                        "HeadWidth":250
+                    },
+                    "CNPJ":{
+                        "HeadName":"LabCNPJ",
+                        "HeadWidth":150
+                    },
+                    "Endereço":{
+                        "HeadName":"LabOfficeAddress",
+                        "HeadWidth":400
+                    },
+                    "Telefone 1":{
+                        "HeadName":"LabContactPhone1",
+                        "HeadWidth":150
+                    },
+                    "Telefone 2":{
+                        "HeadName":"LabContactPhone2",
+                        "HeadWidth":150
+                    },
+                    "E-Mail 1":{
+                        "HeadName":"LabContactEmail1",
+                        "HeadWidth":300
+                    },
+                    "E-Mail 2":{
+                        "HeadName":"LabContactEmail2",
+                        "HeadWidth":300
+                    },
+                    "Fax":{
+                        "HeadName":"LabContactFax",
+                        "HeadWidth":150
+                    }
+                },
+                "Buttons":{
+                    "ExitButton":None
+                },
+                "EntryBox":{
+                    "Nome do Laboratório":{
+                        "HeadName":"LabName",
+                        "Context":True
 
-                for F in self.frames:
-                    self.frames[F].setVisible(False)
-                AppendVar = Ui_SearchBoxAlfa(self.centralwidget,target)
-                self.frames[Ui_SearchBoxAlfa] = AppendVar
-                self.gridLayout.addWidget(AppendVar, 0, 0, 1, 1)
-                self.frames[Ui_SearchBoxAlfa].setVisible(True)
-                self.frames[Ui_SearchBoxAlfa].ExitButton.clicked.connect(lambda: SearchBoxType(None) )
+                    }
+                }
+            }
 
+            self.frames[Ui_SearchBoxAlfa].BuildWidget(inDict)
 
-            else:
+            show_frame(Ui_SearchBoxAlfa)
 
-                self.frames[Ui_SearchBoxAlfa].setVisible(False)
-                del self.frames[Ui_SearchBoxAlfa]
-                self.frames[Ui_StartPage].setVisible(True)
+        def DistCons():
 
+            inDict =  {
+                "Headers":{
+                    "ID":{
+                        "HeadName":"ProvCompID",
+                        "HeadWidth":50
+                    },
+                    "Nome":{
+                        "HeadName":"ProvCompName",
+                        "HeadWidth":250
+                    },
+                    "Fax":{
+                        "HeadName":"ProvContactFax",
+                        "HeadWidth":150
+                    }
+                },
+                "Buttons":{
+                    "ExitButton":None
+                },
+                "EntryBox":{
+                    "Nome do Distribuidor":{
+                        "HeadName":"ProvCompName",
+                        "Context":True
 
+                    }
+                }
+            }
 
+            self.frames[Ui_SearchBoxAlfa].BuildWidget(inDict)
 
+            show_frame(Ui_SearchBoxAlfa)
 
 
 
@@ -137,12 +204,15 @@ class Ui_MainWindow(object):
         self.frames[Ui_StartPage].Laboratorios_Button.clicked.connect(lambda: show_frame(Ui_LabInput) )
         self.frames[Ui_StartPage].Distribuidor_Button.clicked.connect(lambda: show_frame(Ui_DistInput) )
         self.frames[Ui_StartPage].Clientes_Button.clicked.connect(lambda: show_frame(Ui_ClienteFrame) )
-        self.frames[Ui_StartPage].LabCons_Button.clicked.connect(lambda: SearchBoxType(0) )
+        self.frames[Ui_StartPage].LabCons_Button.clicked.connect(LabCons)
+        self.frames[Ui_StartPage].DistCons_Button.clicked.connect(DistCons)
+        self.frames[Ui_SearchBoxAlfa].SearchButton.clicked.connect(lambda: self.frames[Ui_SearchBoxAlfa].SelectCall())
         self.frames[Ui_InputPage].Back_Button.clicked.connect(lambda: show_frame(Ui_StartPage) )
         self.frames[Ui_NFe_Frame].CancelarButton.clicked.connect(lambda: show_frame(Ui_StartPage) )
         self.frames[Ui_LabInput].CancelarButton.clicked.connect(lambda: show_frame(Ui_StartPage) )
         self.frames[Ui_DistInput].CancelarButton.clicked.connect(lambda: show_frame(Ui_StartPage) )
         self.frames[Ui_ClienteFrame].Cancelar_Button.clicked.connect(lambda: show_frame(Ui_StartPage) )
+        self.frames[Ui_SearchBoxAlfa].ExitButton.clicked.connect(lambda: show_frame(Ui_StartPage) )
 
 
 
@@ -154,6 +224,5 @@ if __name__ == "__main__":
     app = QtGui.QApplication(sys.argv)
     MainWindow = QtGui.QMainWindow()
     ui = Ui_MainWindow(MainWindow)
-    #ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
