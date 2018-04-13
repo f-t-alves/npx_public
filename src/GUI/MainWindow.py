@@ -15,6 +15,7 @@ from src.GUI.LabInput import Ui_LabInput
 from src.GUI.DistInput import Ui_DistInput
 from src.GUI.ClienteInput import Ui_ClienteFrame
 from src.GUI.SearchBox import Ui_SearchBoxAlfa
+from src.GUI.ConsultaDicts import *
 
 
 class Ui_MainWindow(object):
@@ -107,56 +108,7 @@ class Ui_MainWindow(object):
 
         def LabCons():
 
-            inDict =  {
-                "Headers":{
-                    "ID":{
-                        "HeadName":"LabID",
-                        "HeadWidth":50
-                    },
-                    "Nome":{
-                        "HeadName":"LabName",
-                        "HeadWidth":250
-                    },
-                    "CNPJ":{
-                        "HeadName":"LabCNPJ",
-                        "HeadWidth":150
-                    },
-                    "Endereço":{
-                        "HeadName":"LabOfficeAddress",
-                        "HeadWidth":400
-                    },
-                    "Telefone 1":{
-                        "HeadName":"LabContactPhone1",
-                        "HeadWidth":150
-                    },
-                    "Telefone 2":{
-                        "HeadName":"LabContactPhone2",
-                        "HeadWidth":150
-                    },
-                    "E-Mail 1":{
-                        "HeadName":"LabContactEmail1",
-                        "HeadWidth":300
-                    },
-                    "E-Mail 2":{
-                        "HeadName":"LabContactEmail2",
-                        "HeadWidth":300
-                    },
-                    "Fax":{
-                        "HeadName":"LabContactFax",
-                        "HeadWidth":150
-                    }
-                },
-                "Buttons":{
-                    "ExitButton":None
-                },
-                "EntryBox":{
-                    "Nome do Laboratório":{
-                        "HeadName":"LabName",
-                        "Context":True
-
-                    }
-                }
-            }
+            inDict =  labInDict
 
             self.frames[Ui_SearchBoxAlfa].BuildWidget(inDict)
 
@@ -164,32 +116,7 @@ class Ui_MainWindow(object):
 
         def DistCons():
 
-            inDict =  {
-                "Headers":{
-                    "ID":{
-                        "HeadName":"ProvCompID",
-                        "HeadWidth":50
-                    },
-                    "Nome":{
-                        "HeadName":"ProvCompName",
-                        "HeadWidth":250
-                    },
-                    "Fax":{
-                        "HeadName":"ProvContactFax",
-                        "HeadWidth":150
-                    }
-                },
-                "Buttons":{
-                    "ExitButton":None
-                },
-                "EntryBox":{
-                    "Nome do Distribuidor":{
-                        "HeadName":"ProvCompName",
-                        "Context":True
-
-                    }
-                }
-            }
+            inDict = provInDict
 
             self.frames[Ui_SearchBoxAlfa].BuildWidget(inDict)
 
