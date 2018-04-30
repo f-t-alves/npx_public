@@ -1,5 +1,4 @@
 npx_mock
 
-COMMANDS:
-- createDB(db)
-Creates the tables within the database. Does not crash on errors.
+Run test.py to create and populate database.
+Branch GUI-PySide offers a WIP graphic user interface.
